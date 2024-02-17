@@ -518,22 +518,22 @@ pcall(function()
     Character.LeftWing = CHARACTER[FWing1].Handle
     Character.LeftWing.Anchored = true
     local a = Character.LeftWing.att1_Handle
-    a.Position = Vector3.new(-0.4, 1, -0.6)
-    a.Orientation = Vector3.new(0, -0, 90)
+    a.Position = Vector3.new(0, 1, 0)
+    a.Orientation = Vector3.new(0, 0, 0)
 end)
 pcall(function()
     Character.RightWing = CHARACTER[FWing2].Handle
     Character.RightWing.Anchored = true
     local a = Character.RightWing.att1_Handle
-    a.Position = Vector3.new(-0.4, 1, 0.6)
-    a.Orientation = Vector3.new(-0, -180, -90)
+    a.Position = Vector3.new(0, 1, 0)
+    a.Orientation = Vector3.new(0, 0, 0)
 end)
 pcall(function()
     Character.Sword = CHARACTER[SlasherBlade].Handle
     Character.Sword.Anchored = true
     local a = Character.Sword.att1_Handle
     a.Position = Vector3.new(-0.1, -1, 0.45)
-    a.Rotation = Vector3.new(-40, 83.5, 90)
+    a.Rotation = Vector3.new(-40, 83.5, 180)
 end)
 
 local FLINGH = nil
