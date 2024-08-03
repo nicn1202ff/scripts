@@ -128,7 +128,7 @@ local sick = Instance.new("Sound", Character)
 if not isfile("bones.mp3") then
     writefile("bones.mp3", game:HttpGet("https://download1501.mediafire.com/p2uw0ufrul6gfjZ8YYQdlVj1Mb9YKoFBWOL-qdU3m2SZz9YX067bSS1T76ZX7t5yR8SRzpBq6Vv2wVHCg8DgLlPD-gsPzSMuNffzUXIelGVmj4jDA8e7vpRcbevrHYMVGBP1eIPDGoIPPOrASm5yr3ZO8Qo-ZnLPzKmF-AUh-tuY628/30uef8wrf7clhkf/bones.mp3"))
 end
-sick.SoundId = "rbxasset://musici.mp3"
+sick.SoundId = syn and getsynasset("bones.mp3") or getcustomasset("bones.mp3")
 sick.Volume = 10
 sick.PlaybackSpeed = 0.75
 sick.Pitch = 0.95
@@ -4450,7 +4450,6 @@ function SnakeGod()
 	Swait(6.5)
 	WACKYEFFECT({Time = 180, EffectType = "Block", Size = Vector3.new(24,24,24)*1.5, Size2 = Vector3.new(0,8,0), Transparency = 0, Transparency2 = 1, CFrame = RightArm.CFrame*CFrame.new(0,-1,0)*CFrame.Angles(math.rad(MRANDOM(0,360)),math.rad(MRANDOM(0,360)),math.rad(MRANDOM(0,360))), MoveToPos = nil, RotationX = 0, RotationY = 0, RotationZ = 0, Material = "Neon", Color = BrickColor.new"Really black".Color, SoundID = nil, SoundPitch = nil, SoundVolume = nil})
 	MODE = "Snake God"
-	sick.SoundId = "rbxassetid://5801951770"
 	sick.Volume = 10
 	sick.PlaybackSpeed = 0.95
 	ATTACK = false
