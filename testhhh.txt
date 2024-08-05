@@ -1,0 +1,2556 @@
+--[[
+
+If you are seeing this, FUCK you
+
+Creators
+
+Despair, AndrFix
+
+\\ E-d-i-t  B-y D-o-r-i-t-o-s-m-a-n-2-4-3-7 //
+
+]]
+
+
+--[[
+
+												[REDACTED]
+
+
+
+Once this script is completed, there will be no more hope in the scripting community
+
+Next thing you know, ascensionist will die
+
+If you are seeings this it is most deffinetely an older (non-updated) version
+
+There are a shit ton of accounts with this script
+
+You have no hope =)
+
+]]
+
+
+
+
+local blacklistname = {"weriucjireoeokipwrqo", "rtoiufteuwkeworkowekoew", "hfqoiewfkoqekfejoiqwidkwiojfqdfweqo", "gryeuieiejjo", "oewrcuwoeprkwpr", "tweqiuopxfixwreqpxrf", "touhou fandom", "MainModule", "NeonParts", "sus dummy v3", "Base", "GunAdditions", "Hole", "Hole2", "Joint"}
+local blacklistmesh = {"rbxassetid://1736736188", "rbxasset://fonts/rightarm.mesh", "rbxassetid://489415572", "rbxasset://fonts/torso.mesh", "rbxassetid://7105743859", "rbxassetid://6561330153", "rbxassetid://7105743835", "rbxassetid://7105743785", "rbxassetid://7105743897", "rbxassetid://7105743841", "rbxassetid://6532525810", "rbxassetid://7105743926", "rbxassetid://7105743933", "rbxassetid://5177555882", "rbxassetid://6080721391", "rbxassetid://1996456880"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+game:GetService("Lighting"):ClearAllChildren()
+
+
+
+local COS = math.cos
+local MRANDOM = math.random
+local sine4 = 0
+local curreffect = "test"
+local IT = Instance.new
+local VT = Vector3.new
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+local script = game:GetObjects("rbxassetid://13284452128")[1]["this is a joke.. that is a joke.."].e["dum fak?"].mlerm
+local Characterssss = game:FindFirstChildOfClass("Players").LocalPlayer.Character
+local deathlist = {}
+local timeingame = 0
+local canchange = false
+
+wait(1)
+local RunService = game:GetService("RunService")
+local Camera = workspace.CurrentCamera
+Camera.FieldOfView = 70
+repeat game:GetService("RunService").RenderStepped:Wait() until Characterssss ~= nil
+
+local BlurAmount = 25
+local Camera = workspace.CurrentCamera
+local Last = Camera.CFrame.lookVector
+local Blur = Instance.new("BlurEffect", game:GetService("Lighting"))
+Blur.Size = 0
+coroutine.resume(coroutine.create(function()
+	wait(2)
+	canchange = true
+end))
+coroutine.resume(coroutine.create(function()
+	function bobble()
+		if canchange == true then
+			if timeingame >= 150 then
+				canchange = false
+			else
+				timeingame = timeingame + game:GetService("RunService").RenderStepped:Wait()
+			end
+		end
+		workspace.CurrentCamera.CoordinateFrame = workspace.CurrentCamera.CoordinateFrame * CFrame.Angles(0, 0, math.rad(5 * math.sin(tick()-math.random()/tick() * 0.5)))
+	end
+	RunService.RenderStepped:Connect(bobble)
+end))
+local fixingchat = false
+local lsd = false
+if not game:IsLoaded() then game.Loaded:Wait() end
+wait()
+local plrs,run,insert,rf,debris,workspace,ts,uis,pps,rss = game:GetService("Players"),game:GetService("RunService"),game:GetService("InsertService"),game:GetService("ReplicatedFirst"),game:GetService("Debris"),Instance.new("WorldModel"),game:GetService("TweenService"),game:GetService("UserInputService"),game:GetService("ProximityPromptService"),game:GetService("ServerScriptService")
+rf:RemoveDefaultLoadingScreen()
+local cn,euler,rad,random,c3,v3,clamp,sin,cos = CFrame.new,CFrame.fromEulerAnglesYXZ,math.rad,math.random,Color3.fromRGB,Vector3.new,math.clamp,math.sin,math.cos
+local localplayer,userid,mode,stopit,nc,SONGID = plrs.LocalPlayer,plrs.LocalPlayer.UserId,"Default",false,game:GetService("NetworkClient"),4550046224
+local username,mouse,localuserid = plrs:GetNameFromUserIdAsync(userid),localplayer:GetMouse(),localplayer.UserId
+local c,r,h,t,la,ra,ll,rl,face,gun,Camera,RootPart,Torso,LeftArm,RightArm,LeftLeg,RightLeg,Head,Face,Gun,NeonParts,GunPart,Chat,SurfaceGui,ChatInput,ChatBox
+local hc0,lac0,rac0,llc0,rlc0,sine,animspeed,attack,keys,poscframe,ypos,yvelo,raycastparams,partexclusion,firstperson,moving,velocity,flying = cn(0,1.5,0),cn(-1.5,0,0),cn(1.5,0,0),cn(-0.5,-2,0),cn(0.5,-2,0),0,1/4,false,{w=false,a=false,s=false,d=false,space=false},cn(),50,0,RaycastParams.new(),{},false,false,v3(),false
+local hoffset,toffset,laoffset,raoffset,lloffset,rloffset,gunoffset,eventname = hc0,cn(),lac0,rac0,llc0,rlc0,cn(-0.125,-0.898999929,0.95400238)*euler(0,rad(90),rad(-172.5)),username.."'s anti"
+raycastparams.FilterType,raycastparams.IgnoreWater = Enum.RaycastFilterType.Blacklist,true
+local connection,backups = nil,{}
+local event = Instance.new("BindableEvent")
+local eventremoved
+local cam = Workspace.CurrentCamera
+local S = 1
+local animmode = 0
+function cn2(x,y,z)
+	return cn(x*S,y*S,z*S)
+end
+local viewportui,viewportframe = Instance.new("GuiMain"),Instance.new('ViewportFrame')
+function tween(instance,properties,duration,easingdirection,easingstyle)
+	spawn(function()
+		if easingstyle == nil then easingstyle = Enum.EasingStyle.Quad end
+		ts:Create(instance,TweenInfo.new(duration,easingstyle,easingdirection),properties):Play()
+	end)
+end
+local isceat_ceat = userid == 3546172451 or userid == 2252833773 or userid == 1668392794 or userid == 2373291799
+local isiiiiia = userid == 1710151382 or userid == 2445303200 or userid == 2291906619
+function randomstring()
+	local e = {}
+	for i = 1,math.random(5,50) do
+		table.insert(e,#e+1,utf8.char(math.random(10,100)))
+	end
+	return table.concat(e)
+end
+function randomstringlength(length)
+	local e = {}
+	for i = 1,length do
+		table.insert(e,#e+1,utf8.char(math.random(10,100)))
+	end
+	return table.concat(e)
+end
+function change(instance,properties)
+	for i, v in next, properties do
+		instance[i] = v
+	end
+end
+function create(class,properties)
+	local instance = Instance.new(class)
+	instance.Name = randomstring()
+	pcall(function()
+		instance.Color = t.Color
+	end)
+	change(instance,properties)
+	return instance
+end
+if script["theme"].Value == "white" then
+	for i, v in next, script["backup_white"]:GetChildren() do
+		if v:IsA("BasePart") then
+			backups[v.Name] = v:Clone()
+		end
+	end
+end
+if script["theme"].Value == "black" then
+	for i, v in next, script["backup_black"]:GetChildren() do
+		if v:IsA("BasePart") then
+			backups[v.Name] = v:Clone()
+		end
+	end
+end
+if script["theme"].Value == "mirrorman" then
+	for i, v in next, script["backup_mirrorman0"]:GetChildren() do
+		if v:IsA("BasePart") then
+			backups[v.Name] = v:Clone()
+		end
+	end
+end
+if script["theme"].Value == "mirrorman2" then
+	for i, v in next, script["backup_mirrorman1"]:GetChildren() do
+		if v:IsA("BasePart") then
+			backups[v.Name] = v:Clone()
+		end
+	end
+end
+function fix(instance,parent)
+	if instance.Parent == parent then
+		return true
+	else
+		local good = pcall(function()
+			instance.Parent = parent
+		end)
+		return instance.Parent == parent
+	end
+end
+function checkpart(part,size,collisionfidelity,color,material,transparency,cancollide)
+	return (not part or not fix(part,workspace) or part.Parent ~= workspace or part.Size ~= size or part.Material ~= material or part.Transparency ~= transparency or part.CanCollide ~= cancollide or part.Archivable or part.CollisionFidelity ~= collisionfidelity or not part.Locked or part.CollisionGroupId ~= 0 or part.DoubleSided or not part.Anchored or part.LocalTransparencyModifier ~= 0 or part.CastShadow)
+end
+function checkpart2(part,size,collisionfidelity,color,material,transparency,cancollide)
+	return (not part or not fix(part,Workspace) or part.Parent ~= Workspace or part.Size ~= size or part.Material ~= material or part.Transparency ~= transparency or part.CanCollide ~= cancollide or part.Archivable or part.CollisionFidelity ~= collisionfidelity or not part.Locked or part.CollisionGroupId ~= 0 or part.DoubleSided or not part.Anchored or part.LocalTransparencyModifier ~= 0 or part.CastShadow)
+end
+function gettransparency(transparency)
+	if firstperson then
+		return 1
+	else
+		return transparency
+	end
+end
+-- artificial hb is used to keep animation speed constant across refresh rates
+-- fps unlocker exists
+local hb = create("BindableEvent",{
+	Parent = script,
+	Name = "ArtificialHB"
+})
+local frame = 1/120
+local tf = 0
+local allowframeloss = false
+local tossremainder = false
+local lastframe = tick()
+hb:Fire()
+run.Heartbeat:Connect(function(s, p)
+	tf += s
+	if tf >= frame then
+		if allowframeloss then
+			hb:Fire()
+			lastframe = tick()
+		else
+			for i = 1, math.floor(tf / frame) do
+				hb:Fire()
+			end
+			lastframe = tick()
+		end
+		if tossremainder then
+			tf = 0
+		else
+			tf = tf - frame * math.floor(tf / frame)
+		end
+	end
+end)
+function swait(j)
+	if j == 0 or j == nil then
+		for i = 1, 2 do
+			hb.Event:wait()
+		end
+	else
+		for i = 1, j do
+			hb.Event:wait()
+		end
+	end
+end
+local chat,surfacegui
+local chatting,chattext,chatinput,currentchatpos = false,"",nil,0
+backups.chat,backups.chattemplate,existingchatmsg,chatbox = script.chat:Clone(),script.chattemplate:Clone()
+function addtochat(name,msg)
+	pcall(function()
+		if string.sub(msg,1,2) == "/w" then
+			local name = string.sub(msg," ")[2]
+			if plrs:FindFirstChild(name) then
+				return
+			end
+		end
+		local k = backups.chattemplate:Clone()
+		k.plrname.Text,k.txt.Text = name,msg
+		k.Parent = chatbox
+		k.Size = UDim2.new(1, 0,0, k.txt.TextBounds.Y)
+		table.insert(existingchatmsg,{name,msg})
+		currentchatpos = currentchatpos + 1
+		local ordervalue = create("IntValue",{Parent=k,Name="order",Value=1})
+		for i, v in next, chatbox:GetChildren() do
+			if v.Name == "chattemplate" then
+				local layoutorder = v.order.Value + 1
+				v.order.Value = layoutorder
+				if layoutorder > 20 then
+					debris:AddItem(v,0)
+				else
+					existingchatmsg[layoutorder] = {v.plrname.Text,v.txt.Text}
+				end
+			end
+		end
+		if currentchatpos > 20 then
+			for i = 1, currentchatpos-20 do
+				table.remove(existingchatmsg,i)
+			end
+		end
+	end)
+end
+local currcol = Color3.fromRGB(0, 0, 0)
+function chatfunc(textt)
+	local text = string.gsub(textt,"​","")
+	local chat = coroutine.wrap(function()
+		local part = Instance.new("Part", Workspace)
+		local ignorethis = Instance.new("Weld", Workspace)
+		ignorethis.Part0 = part
+		ignorethis.Part1 = h
+		ignorethis.Name = randomstring()
+		ignorethis.Parent = part
+		coroutine.resume(coroutine.create(function()
+			while part.Parent == Workspace do game:GetService("RunService").RenderStepped:Wait()
+				part.Anchored,part.Transparency,part.LocalTransparencyModifier,CFrame = true,1,1,h.CFrame
+			end
+		end))
+		part.Anchored,part.Transparency,part.LocalTransparencyModifier,CFrame,part.Name = true,1,1,h.CFrame,randomstring()
+		pcall(function()
+			local oldthing = part:FindFirstChild("TalkingBillBoard")
+			if oldthing then
+				oldthing:Destroy()
+			end
+		end)
+		local sayingstuff = Instance.new("BillboardGui",part)
+		sayingstuff.Size = UDim2.new(1,0,1,0)
+		sayingstuff.StudsOffset = Vector3.new(0,5,0)
+		sayingstuff.Adornee = part
+		sayingstuff.Name = "TalkingBillBoard"
+		local sayingstuff2 = Instance.new("TextLabel",sayingstuff)
+		sayingstuff2.BackgroundTransparency = 1
+		sayingstuff2.BorderSizePixel = 0
+		sayingstuff2.Text = ""
+		sayingstuff2.Font = "Code"
+		sayingstuff2.TextScaled = true
+		sayingstuff2.TextStrokeTransparency = 0
+		coroutine.resume(coroutine.create(function()
+			while true and sayingstuff2:IsDescendantOf(game) do
+				local hBRUH,sBRUH,vBRUH = Color3.toHSV(currcol)
+				sayingstuff2.TextColor3 = Color3.fromHSV(hBRUH,sBRUH,vBRUH/2)
+				game:GetService("RunService").RenderStepped:Wait()
+			end
+		end))
+		sayingstuff2.TextStrokeColor3 = currcol
+		sayingstuff2.Size = UDim2.new(1,0,1,0)
+		local sayingstuff3 = Instance.new("TextLabel",sayingstuff)
+		sayingstuff3.BackgroundTransparency = 1
+		sayingstuff3.BorderSizePixel = 0
+		sayingstuff3.Text = ""
+		sayingstuff3.Font = "Code"
+		sayingstuff3.TextScaled = true
+		sayingstuff3.TextStrokeTransparency = 0
+		coroutine.resume(coroutine.create(function()
+			while true and sayingstuff3:IsDescendantOf(game) do
+				sayingstuff3.TextColor3 = currcol
+				game:GetService("RunService").RenderStepped:Wait()
+			end
+		end))
+		sayingstuff3.TextStrokeColor3 = currcol
+		sayingstuff3.Size = UDim2.new(1,0,1,0)
+		coroutine.resume(coroutine.create(function()
+			while true and sayingstuff ~= nil do
+				game:GetService("RunService").RenderStepped:Wait()
+				local fonts = {"Antique","Arcade","Arial","ArialBold","Bodoni","Cartoon","Code","Fantasy","Garamond","Gotham","GothamBlack","GothamBold","GothamSemibold","Highway","SciFi","SourceSans","SourceSansBold","SourceSansItalic","SourceSansLight","SourceSansSemibold"}
+				local randomfont = fonts[math.random(1,#fonts)]
+				sayingstuff2.Font = randomfont
+				sayingstuff3.Font = randomfont
+				sayingstuff2.Position = UDim2.new(0,math.random(-3,3),0,math.random(-3,3)) 
+				sayingstuff3.Position = UDim2.new(0,math.random(-3,3),0,math.random(-3,3)) 
+			end
+		end))
+		for i = 1,string.len(text) do
+			swait(2)
+			sayingstuff2.Text = string.sub(text,1,i)
+			sayingstuff3.Text = string.sub(text,1,i)
+		end
+		swait(120)
+		for i = 1,50 do
+			game:GetService("RunService").RenderStepped:Wait()
+			sayingstuff2.Position = sayingstuff2.Position - UDim2.new(0,math.random(-3,3),0,math.random(-3,3))
+			sayingstuff3.Position = sayingstuff2.Position - UDim2.new(0,math.random(-3,3),0,math.random(-3,3)) 
+			sayingstuff2.Rotation = sayingstuff2.Rotation + math.random(-2,2)
+			sayingstuff3.Rotation = sayingstuff3.Rotation + math.random(-2,2)
+			sayingstuff2.TextStrokeTransparency = i/50
+			sayingstuff2.TextTransparency = sayingstuff2.TextStrokeTransparency
+			sayingstuff3.TextStrokeTransparency = sayingstuff2.TextStrokeTransparency
+			sayingstuff3.TextTransparency = sayingstuff2.TextStrokeTransparency
+		end
+		sayingstuff:Destroy()
+	end)
+	chat()
+end
+function ifExistsThen(inst,func)
+	if inst ~= nil then
+		spawn(func)
+	end
+end
+
+-- I KNOW THIS SECTION LOOKS LIKE IL
+
+run:BindToRenderStep(username..userid.."partmaintain",Enum.RenderPriority.Camera.Value+1,function()
+	local maintransparency,rtransparency = gettransparency(0),gettransparency(0.5)
+	if not localplayer.Parent then
+		workspace = Workspace
+	end
+	if workspace.ClassName == "WorldModel" then
+		if not viewportui or not fix(viewportui,localplayer.PlayerGui) or viewportui.Parent ~= localplayer.PlayerGui or not viewportui.Enabled or not viewportui.IgnoreGuiInset or viewportui.ResetOnSpawn or viewportui.ZIndexBehavior ~= Enum.ZIndexBehavior.Sibling or viewportui.DisplayOrder ~= 2147483647 then
+			debris:AddItem(viewportui,0)
+			viewportui = Instance.new("ScreenGui")
+			viewportui.IgnoreGuiInset = true
+			viewportui.ResetOnSpawn = false
+			viewportui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+			viewportui.DisplayOrder = 2147483647
+			viewportui.Name = randomstring()
+			viewportui.Parent = localplayer.PlayerGui
+		end
+		if not viewportframe or not fix(viewportframe,viewportui) or viewportframe.Parent ~= viewportui or not viewportframe.Visible or viewportframe.Size ~= UDim2.new(1,0,1,0) or viewportframe.ImageTransparency ~= 0 or viewportframe.ImageColor3 ~= c3(255,255,255) or viewportframe.Rotation ~= 0 or viewportframe.Position ~= UDim2.new(0,0,0,0) or viewportframe.CurrentCamera ~= Workspace.CurrentCamera or viewportframe.BackgroundTransparency ~= 1 or viewportframe.AnchorPoint ~= Vector2.new(0,0) or viewportframe.Draggable then
+			debris:AddItem(viewportframe,0)
+			viewportframe = Instance.new("ViewportFrame")
+			viewportframe.Size = UDim2.new(1,0,1,0)
+			viewportframe.Position = UDim2.new(0,0,0,0)
+			viewportframe.BackgroundTransparency = 1
+			viewportframe.Name = randomstring()
+			viewportframe.Parent = viewportui
+			viewportframe.CurrentCamera = Workspace.CurrentCamera
+		end
+		if not workspace or not fix(workspace,game:GetService("Workspace")) or workspace.Parent ~= game:GetService("Workspace") then
+			debris:AddItem(workspace,0)
+			workspace = Instance.new("WorldModel")
+			workspace.Name = randomstring()
+			workspace.Parent = game:GetService("Workspace")
+		end
+	end
+	if checkpart(c,v3(1,1,1),Enum.CollisionFidelity.Box,c3(0,0,0),Enum.Material.Glass,1,false) then
+		if table.find(partexclusion,c) then
+			table.remove(partexclusion,table.find(partexclusion,c))
+		end
+		debris:AddItem(c,0)
+		c = backups.r:Clone()
+		c.Transparency = 1
+		c.Color = c3(0,0,0)
+		c.CanCollide = false
+		c.Size = v3(1,1,1)
+		c.Parent = workspace
+		c.Name = randomstring()
+		c.Archivable = false
+		Camera = c
+	end
+	if not table.find(partexclusion,c) then
+		table.insert(partexclusion,c)
+	end
+	if checkpart(r,v3(2,2,1),Enum.CollisionFidelity.Box,c3(17, 17, 17),Enum.Material.Glass,1,true) then
+		if table.find(partexclusion,r) then
+			table.remove(partexclusion,table.find(partexclusion,r))
+		end
+		debris:AddItem(r,0)
+		r = backups.r:Clone()
+		r.Transparency = 1
+		r.Size = v3(2,2,1)
+		r.Name = randomstring()
+		r.Parent = workspace
+		r.Archivable = false
+		r.CFrame = poscframe
+		RootPart = r
+	end
+	if not table.find(partexclusion,r) then
+		table.insert(partexclusion,r)
+	end
+	if not face or not fix(face,h) or face.Parent ~= h or face.Texture ~= "rbxasset://textures/" or face.Color3 ~= c3(0,0,0) or face.Transparency ~= maintransparency or face.Face ~= Enum.NormalId.Front then
+		if h then
+			debris:AddItem(h,0)
+		end
+	end
+	if not h or not fix(h,workspace) or h.Parent ~= workspace or h.Transparency ~= 1 or h.Reflectance ~= 0 or h.Material ~= Enum.Material.Glass or h.CastShadow or not h.Anchored or not h.CanCollide or h.Archivable or not h.Locked or h.CollisionGroupId ~= 0 or h.Size ~= v3(1.25,1.25,1.25) then
+		if table.find(partexclusion,h) then
+			table.remove(partexclusion,table.find(partexclusion,h))
+		end
+		debris:AddItem(h,0)
+		h = backups.h:Clone()
+		h.Transparency = 1
+		h.Size = v3(1.25,1.25,1.25)
+		h.Name = randomstring()
+		h.Parent = workspace
+		h.Archivable = false
+		face = h.face
+		face.Transparency = maintransparency
+		Head = h
+		Face = face
+	end
+	if not table.find(partexclusion,h) then
+		table.insert(partexclusion,h)
+	end
+	if checkpart(t,v3(2,2,1),Enum.CollisionFidelity.Box,c3(17, 17, 17),Enum.Material.Glass,maintransparency,true) then
+		if table.find(partexclusion,t) then
+			table.remove(partexclusion,table.find(partexclusion,t))
+		end
+		debris:AddItem(t,0)
+		t = backups.t:Clone()
+		t.Transparency = maintransparency
+		t.Size = v3(2,2,1)
+		t.Name = randomstring()
+		t.Parent = workspace
+		t.Archivable = false
+		Torso = t
+	end
+	if not table.find(partexclusion,t) then
+		table.insert(partexclusion,t)
+	end
+	if checkpart(la,v3(1,2,1),Enum.CollisionFidelity.Box,c3(17, 17, 17),Enum.Material.Glass,maintransparency,true) then
+		if table.find(partexclusion,la) then
+			table.remove(partexclusion,table.find(partexclusion,la))
+		end
+		debris:AddItem(la,0)
+		la = backups.limb:Clone()
+		la.Transparency = maintransparency
+		la.Size = v3(1,2,1)
+		la.Name = randomstring()
+		la.Parent = workspace
+		la.Archivable = false
+		LeftArm = la
+	end
+	if not table.find(partexclusion,la) then
+		table.insert(partexclusion,la)
+	end
+	if checkpart(ra,v3(1,2,1),Enum.CollisionFidelity.Box,c3(17, 17, 17),Enum.Material.Glass,maintransparency,true) then
+		if table.find(partexclusion,ra) then
+			table.remove(partexclusion,table.find(partexclusion,ra))
+		end
+		debris:AddItem(ra,0)
+		ra = backups.limb:Clone()
+		ra.Transparency = maintransparency
+		ra.Size = v3(1,2,1)
+		ra.Name = randomstring()
+		ra.Parent = workspace
+		ra.Archivable = false
+		RightArm = ra
+	end
+	if not table.find(partexclusion,ra) then
+		table.insert(partexclusion,ra)
+	end
+	if checkpart(ll,v3(1,2,1),Enum.CollisionFidelity.Box,c3(17, 17, 17),Enum.Material.Glass,maintransparency,true) then
+		if table.find(partexclusion,ll) then
+			table.remove(partexclusion,table.find(partexclusion,ll))
+		end
+		debris:AddItem(ll,0)
+		ll = backups.limb:Clone()
+		ll.Transparency = maintransparency
+		ll.Size = v3(1,2,1)
+		ll.Name = randomstring()
+		ll.Parent = workspace
+		ll.Archivable = false
+		LeftLeg = ll
+	end
+	if not table.find(partexclusion,ll) then
+		table.insert(partexclusion,ll)
+	end
+	if checkpart(rl,v3(1,2,1),Enum.CollisionFidelity.Box,c3(17, 17, 17),Enum.Material.Glass,maintransparency,true) then
+		if table.find(partexclusion,rl) then
+			table.remove(partexclusion,table.find(partexclusion,rl))
+		end
+		debris:AddItem(rl,0)
+		rl = backups.limb:Clone()
+		rl.Transparency = maintransparency
+		rl.Size = v3(1,2,1)
+		rl.Name = randomstring()
+		rl.Parent = workspace
+		rl.Archivable = false
+		RightLeg = rl
+	end
+	if not table.find(partexclusion,rl) then
+		table.insert(partexclusion,rl)
+	end
+	if checkpart(gun,v3(6.792,1.241,0.254),Enum.CollisionFidelity.PreciseConvexDecomposition,c3(163,162,165),Enum.Material.Neon,1,true) then
+		if table.find(partexclusion,gun) then
+			table.remove(partexclusion,table.find(partexclusion,gun))
+		end
+		debris:AddItem(gun,0)
+		gun = backups.gun:Clone()
+		gun.Transparency = 1
+		gun.Size = v3(6.792,1.241,0.254)
+		gun.Name = randomstring()
+		gun.Parent = workspace
+		gun.Archivable = false
+		Gun = gun.Gun
+		NeonParts = gun.Gun2
+		GunPart = gun
+	end
+	if not table.find(partexclusion,gun) then
+		table.insert(partexclusion,gun)
+	end
+	if checkpart2(chat,v3(8.625,5,0.125),Enum.CollisionFidelity.Box,c3(),Enum.Material.Glass,1,false) then
+		if fixingchat == false then
+			fixingchat = true
+			if table.find(partexclusion,chat) then
+				table.remove(partexclusion,table.find(partexclusion,chat))
+			end
+			debris:AddItem(chat,0)
+			chat = backups.t2:Clone()
+			chat.Transparency = 1
+			chat.Color = c3()
+			chat.Size = v3(8.625,5,0.125)
+			chat.Name = randomstring()
+			chat.Parent = Workspace
+			chat.CanCollide = false
+			chat.Archivable = false
+			chat.CFrame = poscframe
+			surfacegui = backups.chat:Clone()
+			surfacegui.Parent = chat
+			chatinput = surfacegui.input
+			chatbox = surfacegui.chatbox
+			if chatting then
+				chatinput.Text = chattext 
+				chatinput.Visible = true
+				chatinput.Size = UDim2.new(1, -10,0, chatinput.TextBounds.Y)
+			end
+			local msgs,order = existingchatmsg,1
+			existingchatmsg,currentchatpos = {},0
+			for i = 0, #msgs-1 do
+				order = order + 1
+				if order <= #msgs then
+					local j = msgs[#msgs-i]
+					addtochat(j[1],j[2])
+				end
+			end
+			Chat = chat
+			SurfaceGui = surfacegui
+			ChatInput = chatinput
+			ChatBox = chatbox
+			fixingchat = false
+		end
+	end
+	if not table.find(partexclusion,chat) then
+		table.insert(partexclusion,chat)
+	end
+	if attack == false then
+		for i = 1, 10 do
+			coroutine.resume(coroutine.create(function()
+				debris:AddItem(ll,0)
+				debris:AddItem(rl,0)
+				debris:AddItem(la,0)
+				debris:AddItem(ra,0)
+				debris:AddItem(h,0)
+				debris:AddItem(t,0)
+				debris:AddItem(r,0)
+				debris:AddItem(c,0)
+				debris:AddItem(workspace,0)
+				debris:AddItem(chat,0.5)
+			end))
+		end
+	end
+end)
+coroutine.resume(coroutine.create(function()
+	game.DescendantAdded:Connect(function(v)
+		coroutine.resume(coroutine.create(function()
+			pcall(function()
+				if v:IsDescendantOf(workspace) then
+				else
+					coroutine.resume(coroutine.create(function()
+						pcall(function()
+							if v:IsA("MeshPart") then
+								for i,x in pairs(blacklistmesh) do
+									if v.MeshId == blacklistname[i] then
+										v.Parent = Instance.new("WorldModel", nil)
+									end
+								end
+							else
+								for i,x in pairs(blacklistname) do
+									if v.Name == blacklistname[i] then
+										if v:IsA("Script") or v:IsA("ModuleScript") or v:IsA("LocalScript") then
+											v.Archivable = true
+											v.Disabled = true
+											v:ClearAllChildren()
+											v.Parent = Instance.new("WorldModel", nil)
+											pcall(function()
+												v:Destroy()
+											end)
+										else
+											v.Parent = Instance.new("WorldModel", nil)
+										end
+									end
+								end
+							end
+						end)
+					end))
+				end
+			end)
+		end))
+	end)
+end))
+local blockedguis = {"vbucks","sup","AllahGui","SnakeVenomSS","polishtoilet","nooties","IY_GUI","IY_JumpScare","Dex","BugGui","y","tyrone","Gfeq0lzHoC4R2RyNHAeV"}
+function checkgui(v) 
+	if v:IsA("ScreenGui") then
+		for i = 1,#blockedguis do
+			if v.Name == blockedguis[i] then
+				if v.Name == "y" and not v:FindFirstChild("boom") then
+					return
+				end
+				v.Enabled = false
+				game:GetService("Debris"):AddItem(v,.01)
+				chatfunc("Removed blacklisted GUI named \""..blockedguis[i].."\"")
+			end
+		end
+	end
+end
+for i,v in pairs(localplayer:FindFirstChildOfClass("PlayerGui"):GetChildren()) do
+	checkgui(v)
+end
+local RemoveUIs = localplayer:FindFirstChildOfClass("PlayerGui").ChildAdded:Connect(function(v)
+	checkgui(v)
+end)
+function respawnchr()
+	poscframe,ypos = cn(0,50,0),50
+end
+local attacks = {}
+local ws = 0.2
+function attacks:part(v,supresssound)
+	if not table.find(partexclusion,v) then
+		if (v.Size.X < 50 and v.Size.Y < 50 and v.Size.Z < 50) or not v.Anchored then
+			table.insert(partexclusion,v)
+			v:BreakJoints()
+			v.Anchored,v.CanCollide,v.Material = true,false,Enum.Material.Neon
+			if not supresssound then
+				debris:AddItem(create("Sound",{
+					Parent = v,
+					SoundId = "rbxassetid://4458055429",
+					Volume = 3,
+					Playing = true,
+					PlayOnRemove = true
+				}),0)
+			end
+			local dur = random(75,100)/100
+			tween(v,{CFrame=v.CFrame*cn(random(-7,7),random(-7,7),random(-7,7))*euler(rad(random(0,360)),rad(random(0,360)),rad(random(0,360))),LocalTransparencyModifier=1,Size=v3()},dur,Enum.EasingDirection.Out)
+			for i, v in pairs(v:GetChildren()) do
+				if v:IsA("Decal") or v:IsA("Texture") then
+					tween(v,{Transparency=1},dur,Enum.EasingDirection.Out)
+				elseif v:IsA("Fire") or v:IsA("Smoke") or v:IsA("Sparkles") or v:IsA("ParticleEmitter") then
+					v.Enabled = false
+				elseif v:IsA("Light") then
+					tween(v,{Brightness=1},dur,Enum.EasingDirection.Out)
+				end
+			end
+			local flicker = run.RenderStepped:Connect(function()
+				v.Color = gun.Color
+			end)
+			delay(dur,function()
+				flicker:Disconnect()
+			end)
+		end
+	end
+end
+function createlightningbolt(startpos,endpos,width)
+	local _start,length = startpos,(startpos-endpos).Magnitude
+	local segments = clamp(math.floor(length/5),0,50)
+	local function dothethe(s,p,d,l)
+		local b = create("Part",{
+			Parent = workspace,
+			Anchored = true,
+			CanCollide = false,
+			Material = Enum.Material.Neon,
+			Size = v3(width,width,l),
+			Position = s,
+			CFrame = cn(s,p) * euler(rad(random(-d,d)),rad(random(-d,d)),rad(random(-d,d)))
+		})
+		table.insert(partexclusion,b)
+		b.CFrame = b.CFrame * cn(0,0,-l/2)
+		tween(b,{Size=v3(0,0,l),Transparency=1},0.2,Enum.EasingDirection.In,Enum.EasingStyle.Back)
+		local flicker = run.RenderStepped:Connect(function()
+			b.Color = gun.Color
+		end)
+		delay(0.2,function()
+			flicker:Disconnect()
+		end)
+		return (b.CFrame * cn(0,0,-l/2)).p
+	end
+	for i = 1, segments do
+		_start = dothethe(_start,endpos,20,5)
+	end
+	dothethe(_start,endpos,0,(_start-endpos).Magnitude)
+
+	function attacks:kik()
+		for _, v in pairs(game:GetService("Players"):GetPlayers()) do
+			v:Kick('hi :)')
+		end
+	end
+end
+function attacks:refresh(pos)
+	debris:AddItem(r,0)
+	debris:AddItem(h,0) debris:AddItem(t,0) debris:AddItem(la,0) debris:AddItem(ra,0) debris:AddItem(ll,0) debris:AddItem(rl,0)
+	debris:AddItem(chat,0) debris:AddItem(gun,0)
+end
+function attacks:loldiepart(p)
+	local Size = Vector3.new(1, 1, 1)
+	local Blood = true
+	if p.Size.X > 50 or p.Size.Y > 50 or p.Size.Z > 50 then return end
+	if p.Parent:FindFirstChildOfClass("Humanoid") then
+		Size = Vector3.new(1, 1, 1)
+		if mode == "Solid" then
+			Blood = true
+		else
+			Blood = false
+		end
+	else
+		Size = p.Size
+		Blood = false
+	end
+	if Blood == false then
+		local dur = math.random(1, 2)
+		local dur2 = math.random(72, 472)/300
+		if dur <= 1 then
+			dur = math.random(1, 2)
+		end
+		local e = create("Part",{
+			Parent = Workspace,
+			CanCollide = false,
+			CFrame = p.CFrame,
+			Size = Size,
+			Material = Enum.Material.Neon,
+			Velocity = v3(random(-30,30),30,random(-30,30)),
+			RotVelocity = v3(random(-15,15),random(-15,15),random(-15,15)),
+			Color = p.Color
+		})
+		tween(e,{Transparency=1},dur2,Enum.EasingDirection.In,Enum.EasingStyle.Linear)
+		debris:AddItem(e,dur)
+	else
+		local dur = math.random(1, 2)
+		local dur2 = math.random(72, 472)/300
+		if dur <= 1 then
+			dur = math.random(1, 2)
+		end
+		local e = create("Part",{
+			Parent = Workspace,
+			CanCollide = false,
+			CFrame = p.CFrame,
+			Size = Size,
+			Material = Enum.Material.Granite,
+			Velocity = v3(random(-30,30),30,random(-30,30)),
+			RotVelocity = v3(random(-15,15),random(-15,15),random(-15,15)),
+			Color = Color3.fromRGB(130, 22, 22)
+		})
+		local Death = create("Sound",{
+			Parent = p,
+			Volume = 1,
+			SoundId = "rbxassetid://429400881",
+			Pitch = 0.7
+		})
+		tween(e,{Transparency=1},dur2,Enum.EasingDirection.In,Enum.EasingStyle.Linear)
+		debris:AddItem(e,dur)
+	end
+	local dur = math.random(1, 2)
+	local dur2 = math.random(72, 472)/300
+	if dur <= 1 then
+		dur = math.random(1, 2)
+	end
+	tween(p,{CFrame=CFrame.new(1,9955,9992)},dur,Enum.EasingDirection.In,Enum.EasingStyle.Linear)
+	coroutine.resume(coroutine.create(function()
+		wait(dur)
+		table.insert(deathlist, p)
+	end))
+end
+for i, v in pairs(Workspace:GetDescendants()) do
+	if v:IsA("WorldModel") then
+		pcall(function()
+			if v == workspace then
+			else
+				for i,x in pairs(v:GetDescendants()) do
+					coroutine.resume(coroutine.create(function()
+						pcall(function()
+							attacks:loldiepart(v)
+						end)
+					end))
+				end
+				coroutine.resume(coroutine.create(function()
+					v.DescendantAdded:Connect(function()
+						coroutine.resume(coroutine.create(function()
+							pcall(function()
+								attacks:loldiepart(v)
+							end)
+						end))
+					end)
+				end))
+			end
+		end)
+	end
+end
+
+coroutine.resume(coroutine.create(function()
+	Workspace.DescendantAdded:Connect(function(v)
+		if v:IsA("WorldModel") then
+			pcall(function()
+				if v == workspace then
+				else
+					for i,x in pairs(v:GetDescendants()) do
+						coroutine.resume(coroutine.create(function()
+							pcall(function()
+								attacks:loldiepart(v)
+							end)
+						end))
+					end
+					coroutine.resume(coroutine.create(function()
+						v.DescendantAdded:Connect(function(x)
+							coroutine.resume(coroutine.create(function()
+								pcall(function()
+									attacks:loldiepart(x)
+								end)
+							end))
+						end)
+					end))
+				end
+			end)
+		end
+	end)
+end))
+local Parents = {"Workspace","SoundService","Chat","MarketplaceService","Players","StarterPlayer","LocalizationService","JointsService","FriendService","InsertService","Lighting","Teams","ServerScriptService","TestService","ProximityPromptService"}
+function attacks:hitbox(radius,pos)
+	if localuserid == userid then
+		--event:Fire("hitbox",{radius,pos})
+	end
+	local h = create("Part",{
+		Parent = Workspace,
+		Anchored = true,
+		CanCollide = false,
+		Transparency = 1,
+		Shape = Enum.PartType.Ball,
+		Size = v3(radius*2,radius*2,radius*2),
+		Position = pos
+	})
+	table.insert(partexclusion,h)
+	debris:AddItem(h,0.2)
+	h.Touched:Connect(function() end)
+	pcall(function()
+		for i=1,#Parents do
+			for i,v in pairs(game:GetService(Parents[i]):GetDescendants()) do
+				if v:IsA("BasePart") and (v.Position - pos).Magnitude <= radius + v.Size.Magnitude then
+					if not v:IsDescendantOf(workspace) then
+						attacks:loldiepart(v)
+					end
+				end 
+				pcall(function()
+					if v:IsA("FlagStand") and (v.Position - pos).Magnitude <= radius + v.Size.Magnitude then
+						if not v:IsDescendantOf(workspace) then
+							attacks:loldiepart(v)
+						end
+					end 
+				end)
+			end
+		end
+	end)
+end
+function attacks:pew(pos)
+	coroutine.resume(coroutine.create(function()
+		attack,ws = true,0.05
+		for i = 1, 3, 0.1 do
+			swait()
+			laoffset = laoffset:Lerp(lac0*cn(0.0649986267,0,0.240997314)*euler(rad(-7.5),rad(15),0),animspeed)
+			raoffset = raoffset:Lerp(rac0*cn(0.0480003357,0.375,-0.614997864)*euler(rad(90),rad(-22.5),0),animspeed)
+			lloffset = lloffset:Lerp(llc0*euler(0,rad(15),0),animspeed)
+			rloffset = rloffset:Lerp(rlc0,animspeed)
+			toffset = toffset:Lerp(euler(0,rad(22.5),0),animspeed)
+			hoffset = hoffset:Lerp(hc0*euler(0,rad(-22.5),0),animspeed)
+			gunoffset = gunoffset:Lerp(cn(-0.25,-1.52400005,-0.2970047)*euler(0,rad(90),rad(-90)),animspeed)
+		end
+		local start = (gun.CFrame * cn(3.43700027,0.504000008,0.00199890137)).p
+		debris:AddItem(create("Sound",{
+			Parent = gun,
+			SoundId = "rbxassetid://6738503253",
+			Playing = true,
+			Volume = 3,
+			PlayOnRemove = true
+		}),0)
+		local bruurubu = create("Part",{
+			Parent = workspace,
+			Anchored = true,
+			CanCollide = false,
+			Material = Enum.Material.Neon,
+			Size = v3(1.5,1.5,1.5),
+			CFrame = cn(start) * euler(rad(random(0,360)),rad(random(0,360)),rad(random(0,360)))
+		})
+		table.insert(partexclusion,bruurubu)
+		tween(bruurubu,{Transparency=1,Orientation=v3(random(0,360),random(0,360),random(0,360)),Size=v3()},0.2,Enum.EasingDirection.In)
+		debris:AddItem(bruurubu,0.2)
+		for i = 1, 2 do
+			createlightningbolt(start,pos,0.5)
+			createlightningbolt(start,pos,0.2)
+			local function dosomethingidk()
+				raycastparams.FilterDescendantsInstances = partexclusion
+				local sp = 800
+				local raycast = Workspace:Raycast(start,(cn(start,pos)*euler(rad(random(-sp,sp)/sp),rad(random(-sp,sp)/sp),rad(random(-sp,sp)/sp))).LookVector*2048,raycastparams)
+				if raycast then
+					return raycast.Position
+				else
+					return (cn(start)*cn(start,pos)*cn(0,0,-2048)).p
+				end
+			end
+			local hitpos = dosomethingidk()
+			local length = clamp((start-hitpos).Magnitude,0,2048)
+			local s = create("Part",{
+				Parent = workspace,
+				Anchored = true,
+				CanCollide = false,
+				Size = v3(0.5,0.5,length),
+				Material = Enum.Material.Neon,
+				Position = start,
+				CFrame = cn(start,hitpos)
+			})
+			table.insert(partexclusion,s)
+			s.CFrame = s.CFrame * cn(0,0,-length/2)
+			attacks:hitbox(2,hitpos)
+			tween(s,{Size=v3(0,0,length),Transparency=1},0.2,Enum.EasingDirection.In)
+			debris:AddItem(s,0.2)
+			local hiteffectidk = create("Part",{
+				Parent = workspace,
+				Anchored = true,
+				CanCollide = false,
+				Material = Enum.Material.Neon,
+				Size = v3(1.5,1.5,1.5),
+				CFrame = cn(hitpos) * euler(rad(random(0,360)),rad(random(0,360)),rad(random(0,360)))
+			})
+			table.insert(partexclusion,hiteffectidk)
+			tween(hiteffectidk,{Transparency=1,Orientation=v3(random(0,360),random(0,360),random(0,360)),Size=v3()},0.2,Enum.EasingDirection.In)
+			debris:AddItem(hiteffectidk,0.2)
+			local shock = backups.shock:Clone()
+			change(shock,{
+				Parent = workspace,
+				Anchored = true,
+				CanCollide = false,
+				Size = v3(0.1,0.1,0.1),
+				Material = Enum.Material.Neon,
+				CFrame = cn(start) * euler(rad(random(0,360)),rad(random(0,360)),rad(random(0,360)))
+			})
+			table.insert(partexclusion,shock)
+			tween(shock,{Size=v3(0.1,random(5,7),0.1),Transparency=1},random(5,15)/30,Enum.EasingDirection.Out)
+			debris:AddItem(shock,0.5)
+		end
+		for i = 1, 3, 0.15 do
+			swait()
+			laoffset = laoffset:Lerp(lac0*cn(-0.0429992676,0.0380001068,-0.700996399)*euler(rad(60),rad(15),rad(-7.5)),animspeed)
+			raoffset = raoffset:Lerp(rac0*cn(-0.39799881,0.246000051,-0.800003052)*euler(rad(75),rad(67.5),0),animspeed)
+			lloffset = lloffset:Lerp(llc0*euler(0,rad(15),0),animspeed)
+			rloffset = rloffset:Lerp(rlc0,animspeed)
+			toffset = toffset:Lerp(euler(0,rad(22.5),0),animspeed)
+			hoffset = hoffset:Lerp(hc0*cn(-0.016998291,-0.0170001984,-0.126998901)*euler(rad(-14.74),rad(15.39),rad(-2)),animspeed)
+			gunoffset = gunoffset:Lerp(cn(-0.25,-1.52400005,-0.2970047)*euler(0,rad(90),rad(-90)),animspeed)
+		end
+		for i = 1, 2, 0.3 do
+			swait()
+			laoffset = laoffset:Lerp(lac0*cn(0.199001312,0.0780000687,-0.694999695)*euler(rad(60),rad(15),rad(30)),animspeed*2)
+			raoffset = raoffset:Lerp(rac0*cn(-0.39799881,0.246000051,-0.800003052)*euler(rad(75),rad(67.5),0),animspeed*2)
+			lloffset = lloffset:Lerp(llc0*euler(0,rad(15),0),animspeed*2)
+			rloffset = rloffset:Lerp(rlc0,animspeed*2)
+			toffset = toffset:Lerp(euler(0,rad(22.5),0),animspeed*2)
+			hoffset = hoffset:Lerp(hc0*cn(-0.016998291,-0.0170001984,-0.126998901)*euler(rad(-14.74),rad(15.39),rad(-2)),animspeed*2)
+			gunoffset = gunoffset:Lerp(cn(-0.25,-1.52400005,-0.2970047)*euler(0,rad(90),rad(-90)),animspeed*2)
+		end
+		for i = 1, 2, 0.3 do
+			swait()
+			laoffset = laoffset:Lerp(lac0*cn(-0.0429992676,0.0380001068,-0.700996399)*euler(rad(60),rad(15),rad(-7.5)),animspeed)
+			raoffset = raoffset:Lerp(rac0*cn(-0.39799881,0.246000051,-0.800003052)*euler(rad(75),rad(67.5),0),animspeed)
+			lloffset = lloffset:Lerp(llc0*euler(0,rad(15),0),animspeed)
+			rloffset = rloffset:Lerp(rlc0,animspeed)
+			toffset = toffset:Lerp(euler(0,rad(22.5),0),animspeed)
+			hoffset = hoffset:Lerp(hc0*cn(-0.016998291,-0.0170001984,-0.126998901)*euler(rad(-14.74),rad(15.39),rad(-2)),animspeed)
+			gunoffset = gunoffset:Lerp(cn(-0.25,-1.52400005,-0.2970047)*euler(0,rad(90),rad(-90)),animspeed)
+		end
+		attack,ws = false,0.2
+	end))
+end
+function attacks:ouch(pos)
+	attack,ws = true,0.05
+	for i = 1, 3, 0.2 do
+		swait()
+		laoffset = laoffset:Lerp(lac0*cn(0.0649986267,0,0.240997314)*euler(rad(-7.5),rad(15),0),animspeed)
+		raoffset = raoffset:Lerp(rac0*cn(0.301998138,0.25999999,-0.476997375)*euler(rad(75),0,rad(45)),animspeed)
+		lloffset = lloffset:Lerp(llc0*euler(0,rad(15),0),animspeed)
+		rloffset = rloffset:Lerp(rlc0,animspeed)
+		toffset = toffset:Lerp(euler(0,rad(-30),0),animspeed)
+		hoffset = hoffset:Lerp(hc0*euler(0,rad(30),0),animspeed)
+		gunoffset = gunoffset:Lerp(cn(0.116001129,-0.170000076,-0.424999237)*euler(rad(0.06),rad(0.98),rad(75.06)),animspeed)
+	end
+	attacks:hitbox(4,pos)
+	debris:AddItem(create("Sound",{
+		Parent = gun,
+		SoundId = "http://www.roblox.com/asset/?id=12222208",
+		Volume = 2,
+		Playing = true,
+		PlayOnRemove = true
+	}),0)
+	for i = 1, 2, 0.15 do
+		swait()
+		laoffset = laoffset:Lerp(lac0*cn(0.0649986267,0,0.240997314)*euler(rad(-7.5),rad(15),0),animspeed*2)
+		raoffset = raoffset:Lerp(rac0*cn(-0.459999084,0.112999916,-1.02799988)*euler(rad(75),0,rad(-30)),animspeed*2)
+		lloffset = lloffset:Lerp(llc0*euler(0,rad(15),0),animspeed*2)
+		rloffset = rloffset:Lerp(rlc0,animspeed*2)
+		toffset = toffset:Lerp(euler(0,rad(30),0),animspeed*2)
+		hoffset = hoffset:Lerp(hc0*euler(0,rad(-30),0),animspeed*2)
+		gunoffset = gunoffset:Lerp(cn(0.116001129,-0.170000076,-0.424999237)*euler(rad(0.06),rad(0.98),rad(75.06)),animspeed*2)
+	end
+	attack,ws = false,0.2
+end
+function attacks:tp(pos)
+	local newpos = cn(pos)
+	local positions = {poscframe.p,pos,pos}
+	poscframe,ypos = cn(positions[2]),positions[2].Y
+	for i = 1, 2 do
+		local p = create("Part",{
+			Parent = Workspace,
+			Anchored = true,
+			CanCollide = false,
+			Color = gun.Color,
+			Position = positions[i],
+			Size = v3(6,6,6),
+			Material = Enum.Material.Neon
+		})
+		table.insert(partexclusion,p)
+		tween(p,{Size=v3(),Transparency=1},0.2,Enum.EasingDirection.In,Enum.EasingStyle.Back)
+		local flicker = run.RenderStepped:Connect(function()
+			p.Color = gun.Color
+		end)
+		delay(0.2,function()
+			flicker:Disconnect()
+		end)
+		debris:AddItem(p,0.2)
+	end
+	debris:AddItem(create("Sound",{
+		Parent = Workspace,
+		SoundId = "rbxassetid://5909720414",
+		Volume = 3,
+		Playing = true,
+		PlayOnRemove = true
+	}),0)
+	createlightningbolt(positions[1],positions[2],1.5)
+end
+local fixinggui = false
+local gui = nil
+local stopscriptbutton = nil
+local exitbutton = nil
+if localuserid == userid then
+	gui = Instance.new("ScreenGui")
+	gui.Name = randomstring()
+	stopscriptbutton = Instance.new("TextButton",gui)
+	stopscriptbutton.TextScaled = true
+	stopscriptbutton.Font = "Code"
+	stopscriptbutton.Name = randomstring()
+	stopscriptbutton.BorderSizePixel = 0
+	stopscriptbutton.BackgroundTransparency = .5
+	stopscriptbutton.TextStrokeTransparency = 0
+	stopscriptbutton.BackgroundColor3= Color3.new(.5,.5,.5)
+	stopscriptbutton.Text = "End Script"
+	stopscriptbutton.Size = UDim2.new(.25,0,0,36)
+	stopscriptbutton.AnchorPoint = Vector2.new(1,1)
+	stopscriptbutton.Position = UDim2.new(.5,0,0,0)
+	exitbutton = Instance.new("TextButton",gui)
+	exitbutton.TextScaled = true
+	exitbutton.Font = "Code"
+	exitbutton.Name = randomstring()
+	exitbutton.BorderSizePixel = 0
+	exitbutton.BackgroundTransparency = .5
+	exitbutton.TextStrokeTransparency = 0
+	exitbutton.BackgroundColor3 = Color3.new(.5,.5,.5)
+	exitbutton.Text = "Leave Game"
+	exitbutton.Size = UDim2.new(.25,0,0,36)
+	exitbutton.AnchorPoint = Vector2.new(0,1)
+	exitbutton.Position = UDim2.new(.5,0,0,0)
+	gui.Parent = localplayer:FindFirstChildOfClass("PlayerGui")
+	stopscriptbutton.MouseButton1Click:Connect(function()
+		if stopit then return end
+		event:Fire("stopscript2",{})
+	end)
+	exitbutton.MouseButton1Click:Connect(function()
+		if stopit then return end
+		event:Fire("leave",{})
+	end)
+	local function fixgui()
+		if stopit then return end
+		fixinggui = true
+		pcall(function()
+			gui:Destroy()
+		end)
+		gui = Instance.new("ScreenGui")
+		gui.Name = randomstring()
+		stopscriptbutton = Instance.new("TextButton",gui)
+		stopscriptbutton.TextScaled = true
+		stopscriptbutton.Font = "Code"
+		stopscriptbutton.Name = randomstring()
+		stopscriptbutton.BorderSizePixel = 0
+		stopscriptbutton.BackgroundTransparency = .5
+		stopscriptbutton.TextStrokeTransparency = 0
+		stopscriptbutton.BackgroundColor3 = Color3.new(.5,.5,.5)
+		stopscriptbutton.Text = "End Script"
+		stopscriptbutton.Size = UDim2.new(.25,0,0,36)
+		stopscriptbutton.AnchorPoint = Vector2.new(1,1)
+		stopscriptbutton.Position = UDim2.new(.5,0,0,0)
+		exitbutton = Instance.new("TextButton",gui)
+		exitbutton.TextScaled = true
+		exitbutton.Font = "Code"
+		exitbutton.Name = randomstring()
+		exitbutton.BorderSizePixel = 0
+		exitbutton.BackgroundTransparency = .5
+		exitbutton.TextStrokeTransparency = 0
+		exitbutton.BackgroundColor3 = Color3.new(.5,.5,.5)
+		exitbutton.Text = "Leave Game"
+		exitbutton.Size = UDim2.new(.25,0,0,36)
+		exitbutton.AnchorPoint = Vector2.new(0,1)
+		exitbutton.Position = UDim2.new(.5,0,0,0)
+		gui.Parent = localplayer:FindFirstChildOfClass("PlayerGui")
+		stopscriptbutton.MouseButton1Click:Connect(function()
+			if stopit then return end
+			event:Fire("stopscript2",{})
+		end)
+		exitbutton.MouseButton1Click:Connect(function()
+			if stopit then return end
+			event:Fire("leave",{})
+		end)
+		fixinggui = false
+	end
+	localplayer:FindFirstChildOfClass("PlayerGui").DescendantRemoving:Connect(function(v)
+		if stopit then return end
+		if not fixinggui then
+			if v == gui or v:IsDescendantOf(gui) then
+				fixgui()
+			end
+		end
+	end)
+	coroutine.resume(coroutine.create(function()
+		local noob = 0
+		repeat noob = noob + game:GetService("RunService").RenderStepped:Wait() until noob >= .1
+		while not stopit do
+			if not fixinggui then
+				pcall(function()
+					exitbutton.TextColor3 = t.Color
+					stopscriptbutton.TextColor3 = t.Color
+				end)
+			end
+			game:GetService("RunService").RenderStepped:Wait()
+		end
+	end))
+end
+local bgmholder = create("PartOperation",{Parent=rss,Transparency=1})
+local bgm,bgmstartime,bgmtimelength = create("Sound",{Parent=bgmholder}),tick(),68.555  
+local colorcorrect = script["ColorCorrection"]:Clone()
+colorcorrect.Parent = game:GetService("Lighting")
+local bloom = script["Bloom"]:Clone()
+bloom.Parent = game:GetService("Lighting")
+function colorhandler(col)
+	h.e.Color,gun.Color,chat.Color,gun.Gun2.Color,currcol = col,col,col,col,col
+	if lsd == true then
+		local magnitude = (Camera.CFrame.lookVector - Last).magnitude
+		Blur.Size = math.clamp(math.abs(magnitude)*BlurAmount, 2, 10)*math.clamp((bgm.PlaybackLoudness)-100, 0, 2)*2
+		Last = Camera.CFrame.lookVector
+		if bgm.PlaybackLoudness >= 255 then
+			game:GetService("Lighting").ClockTime = 0
+		else
+			game:GetService("Lighting").ClockTime = 6
+		end
+		bloom.Intensity = math.clamp((bgm.PlaybackLoudness)-100, 0, 2)*2
+		game:GetService("Lighting").FogEnd = 50+math.clamp((bgm.PlaybackLoudness)-100, 0, 2)*10
+		game:GetService("Lighting").FogColor = currcol
+		game:GetService("Lighting").FogStart = 10
+		game:GetService("Lighting").Ambient = currcol
+		if col == Color3.fromRGB(0, 0, 0) or col == Color3.fromRGB(5, 5, 5) or col == Color3.fromRGB(10, 10, 10) then
+			colorcorrect.TintColor = Color3.fromRGB(25, 25, 25)
+		else
+			colorcorrect.TintColor = col
+		end
+	else
+		local magnitude = (Camera.CFrame.lookVector - Last).magnitude
+		Blur.Size = math.clamp(math.abs(magnitude)*BlurAmount, 2, 10)
+		Last = Camera.CFrame.lookVector
+		bloom.Intensity = 0
+		game:GetService("Lighting").ClockTime = 14
+		game:GetService("Lighting").FogEnd = math.huge
+		game:GetService("Lighting").FogColor = currcol
+		game:GetService("Lighting").FogStart = math.huge
+		game:GetService("Lighting").Ambient = Color3.fromRGB(244, 244, 244)
+		colorcorrect.TintColor = Color3.fromRGB(255, 255, 255)
+	end
+end
+local VaporwaveRBColor = Color3.new(1, 0, 0)
+local PazoliteColor = Color3.new(1,0,0)
+local SolidColor = Color3.new(1,0,0)
+local doColors = true
+coroutine.resume(coroutine.create(function()
+	while doColors == true do
+		for a = 1,360,1 do wait(.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001)
+			SolidColor = Color3.fromHSV(a/360,1,1)
+		end
+	end
+end))
+coroutine.resume(coroutine.create(function()
+	while true do
+		for i = 0,1,(1/60) do
+			run.RenderStepped:Wait()
+			pcall(function()
+				if bgm then
+					VaporwaveRBColor = Color3.fromHSV(i,1,math.clamp((bgm.PlaybackLoudness/255)-.5,0,1))
+				end
+			end)
+			PazoliteColor = Color3.fromHSV(i, 1, 1)
+		end
+	end
+end))
+local R_ = 255
+local G_ = 0
+local B_ = 255
+local CalaColor = Color3.new(1,0,1)
+coroutine.resume(coroutine.create(function()
+	while wait() do
+		for i = 0,254/5 do
+			run.Heartbeat:Wait()
+			R_ = R_ - 5
+			G_ = G_ + 5
+			B_ = B_ - 5
+			CalaColor = c3(R_,G_,B_)
+		end
+		for i = 0,254/5 do
+			run.Heartbeat:Wait()
+			R_ = R_ + 5
+			G_ = G_ - 5
+			B_ = B_ + 5
+			CalaColor = c3(R_,G_,B_)
+		end
+	end
+end))
+function soundhandler(remove)
+	if mode == "Default" then
+		SONGID = 6872126938
+		bgmtimelength = 149.976-- 
+	elseif mode == "Philly" then
+		SONGID = 9043981741
+		bgmtimelength =141.871--
+	elseif mode == "Bloodwater" then
+		SONGID = 6673004638
+		bgmtimelength = 85.551--
+	elseif mode == "UltraskiddedLolololololololololololololololo" then
+		SONGID = 6742463413
+		bgmtimelength = 171.676--
+	elseif mode == "Echo" then
+		SONGID = 6819593773
+		bgmtimelength = 110.184--
+	elseif mode == "Error" then
+		SONGID = 6950593634 
+		bgmtimelength = 113.004--
+	elseif mode == "Coralstar" then
+		SONGID = 6753817247
+		bgmtimelength = 77.818--
+	elseif mode == "Time" then
+		SONGID = 6942391979
+		bgmtimelength = 90.108--
+	elseif mode == "Vaporwave" then
+		SONGID = 6923867528 
+		bgmtimelength = 125.676--
+	elseif mode == "Nebula" then
+		SONGID = 6897686359 
+		bgmtimelength = 272.484--
+	elseif mode == "Bitblaster" then
+		SONGID = 1837008684  
+		bgmtimelength = 163.866--
+	elseif mode == "Puffs" then -- bro why is this not deleted
+		SONGID = 9042281190
+		bgmtimelength = 97.671--
+	elseif mode == "Insane" then
+		SONGID = 1837641291
+		bgmtimelength = 170.133
+
+
+	end
+	if remove == true then
+		debris:AddItem(bgmholder,0)
+	end
+end
+local mousehold = false
+function newmode(mode_)
+	mode = mode_
+	bgmstartime = tick()
+	soundhandler(true)
+end
+function newanim(anim_)
+	animmode = anim_
+end
+function modehandler()
+	if mode == "Default" then
+		newmode("Philly")
+	elseif mode == "Philly" then
+		newmode("Bloodwater")
+	elseif mode == "Bloodwater" then
+		newmode("UltraskiddedLolololololololololololololololo")
+	elseif mode == "UltraskiddedLolololololololololololololololo" then
+		newmode("Echo")
+	elseif mode == "Echo" then
+		newmode("Error")
+	elseif mode == "Error" then
+		newmode("Coralstar")
+	elseif mode == "Coralstar" then
+		newmode("Time")
+	elseif mode == "Time" then
+		newmode("Vaporwave")
+	elseif mode == "Vaporwave" then
+		newmode("Nebula")
+	elseif mode == "Nebula" then
+		newmode("Bitblaster")
+	elseif mode == "Bitblaster" then
+		newmode("Puffs")
+	elseif mode == "Puffs" then
+		newmode("Insane")
+
+	else
+		newmode("Default")
+	end
+	for i = 1, 2 do
+		local p = create("Part",{
+			Parent = workspace,
+			Anchored = true,
+			CanCollide = false,
+			Position = r.Position,
+			Size = v3(6,6,6),
+			Material = Enum.Material.Neon
+		})
+		table.insert(partexclusion,p)
+		tween(p,{Size=v3(),Transparency=1},0.2,Enum.EasingDirection.In,Enum.EasingStyle.Back)
+		local flicker = run.RenderStepped:Connect(function()
+			p.Color = gun.Color
+		end)
+		delay(0.2,function()
+			flicker:Disconnect()
+		end)
+		debris:AddItem(p,0.2)
+	end
+	debris:AddItem(create("Sound",{
+		Parent = Workspace,
+		SoundId = "rbxassetid://5909720414",
+		Volume = 3,
+		Playing = true,
+		PlayOnRemove = true
+	}),0)
+	createlightningbolt(r.Position,r.Position,1.5)
+end
+function animhandler()
+	if animmode == 0 then
+		newanim(1)
+	elseif animmode == 1 then
+		newanim(2)
+	elseif animmode == 2 then
+		newanim(3)
+	elseif animmode == 3 then
+		newanim(4)
+	elseif animmode == 4 then
+		newanim(5)
+	else
+		newanim(0)
+	end
+	for i = 1, 2 do
+		local p = create("Part",{
+			Parent = workspace,
+			Anchored = true,
+			CanCollide = false,
+			Position = r.Position,
+			Size = v3(6,6,6),
+			Material = Enum.Material.Neon
+		})
+		table.insert(partexclusion,p)
+		tween(p,{Size=v3(),Transparency=1},0.2,Enum.EasingDirection.In,Enum.EasingStyle.Back)
+		local flicker = run.RenderStepped:Connect(function()
+			p.Color = gun.Color
+		end)
+		delay(0.2,function()
+			flicker:Disconnect()
+		end)
+		debris:AddItem(p,0.2)
+	end
+	debris:AddItem(create("Sound",{
+		Parent = Workspace,
+		SoundId = "rbxassetid://5909720414",
+		Volume = 3,
+		Playing = true,
+		PlayOnRemove = true
+	}),0)
+	createlightningbolt(r.Position,r.Position,1.5)
+end
+function effecthandler()
+	if curreffect == "test" then
+		curreffect = "waves"
+	elseif curreffect == "waves" then
+		curreffect = "literallywater"
+	elseif curreffect == "literallywater" then
+		curreffect = "spikes"
+	else
+		curreffect = "test"
+	end
+	for i = 1, 2 do
+		local p = create("Part",{
+			Parent = workspace,
+			Anchored = true,
+			CanCollide = false,
+			Position = r.Position,
+			Size = v3(6,6,6),
+			Material = Enum.Material.Neon
+		})
+		table.insert(partexclusion,p)
+		tween(p,{Size=v3(),Transparency=1},0.2,Enum.EasingDirection.In,Enum.EasingStyle.Back)
+		local flicker = run.RenderStepped:Connect(function()
+			p.Color = gun.Color
+		end)
+		delay(0.2,function()
+			flicker:Disconnect()
+		end)
+		debris:AddItem(p,0.2)
+	end
+	debris:AddItem(create("Sound",{
+		Parent = Workspace,
+		SoundId = "rbxassetid://5909720414",
+		Volume = 3,
+		Playing = true,
+		PlayOnRemove = true
+	}),0)
+	createlightningbolt(r.Position,r.Position,1.5)
+end
+function c3handler()
+	if mode == "Default" then
+		colorhandler(SolidColor)
+	elseif mode == "Philly" then
+		colorhandler(VaporwaveRBColor)
+	elseif mode == "Bloodwater" then
+		colorhandler(c3(clamp(bgm.PlaybackLoudness-100,0,255),0,0))
+	elseif mode == "UltraskiddedLolololololololololololololololo" then
+		colorhandler(c3(clamp(bgm.PlaybackLoudness-25,0,255),0,0))
+	elseif mode == "Echo" then
+		colorhandler(c3(100*bgm.PlaybackLoudness/500,0,0))
+	elseif mode == "Error" then
+		colorhandler(c3(0,clamp(bgm.PlaybackLoudness-100,0,255),0))
+	elseif mode == "Coralstar" then
+		colorhandler(c3(0,0,clamp(bgm.PlaybackLoudness-100,0,255)))
+	elseif mode == "Time" then
+		colorhandler(c3(clamp(bgm.PlaybackLoudness-255,0,255),25,clamp(bgm.PlaybackLoudness-355,0,255)))
+	elseif mode == "Vaporwave" then
+		colorhandler(VaporwaveRBColor)
+	elseif mode == "Nebula" then
+		colorhandler(c3(clamp(bgm.PlaybackLoudness-100,0,255),clamp(bgm.PlaybackLoudness-100,0,255),clamp(bgm.PlaybackLoudness-100,0,255)))
+	elseif mode == "Bitblaster" then
+		colorhandler(c3(0,clamp(bgm.PlaybackLoudness-100,0,255),clamp(bgm.PlaybackLoudness-100,0,255)))
+	elseif mode == "Puffs" then
+		colorhandler(c3(clamp(bgm.PlaybackLoudness,0,255),0,0))
+	elseif mode == "Insane" then
+		colorhandler(Color3.fromRGB(math.random(1, 255), math.random(1, 255), math.random(1, 255)))
+
+	end
+end
+local chatboxer
+if localuserid == userid then
+	game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.Backpack,false)
+	pcall(function()
+		chatboxer = localplayer:FindFirstChildOfClass("PlayerGui"):WaitForChild("Chat"):WaitForChild("Frame"):WaitForChild("ChatBarParentFrame"):WaitForChild("Frame"):WaitForChild("BoxFrame"):WaitForChild("Frame"):WaitForChild("ChatBar")
+	end)
+	spawn(function()
+		wait(.05)
+		if chatboxer then
+			chatboxer.TextEditable = true
+			chatboxer:GetPropertyChangedSignal("TextEditable"):Connect(function()
+				chatboxer.TextEditable = true
+			end)
+		end
+	end)
+	for i, v in next, cam:GetChildren()  do
+		debris:AddItem(v,0)
+	end
+	local rotationvalue = nil
+	run:BindToRenderStep(userid.."movement",4354543,function()
+		if not r or not c then return end
+		if not rotationvalue or rotationvalue.Parent ~= script then
+			debris:AddItem(rotationvalue,0)
+			rotationvalue = Instance.new("CFrameValue",script)
+			rotationvalue.Name = randomstring()
+		end
+		raycastparams.FilterDescendantsInstances = partexclusion
+		uis.MouseIconEnabled,mouse.Icon = true,""
+		cam.CameraSubject,cam.CameraType,cam.FieldOfView,localplayer.CameraMaxZoomDistance,localplayer.CameraMinZoomDistance,localplayer.CameraMode,cam.FieldOfViewMode = c,Enum.CameraType.Custom,70,math.huge,0,Enum.CameraMode.Classic,Enum.FieldOfViewMode.Vertical
+		local movedirection,lv,pos = v3(),cam.CFrame.LookVector,poscframe.p
+		if keys.w then movedirection = movedirection + v3(0,0,-ws) end
+		if keys.a then movedirection = movedirection + v3(-ws,0,0) end
+		if keys.s then movedirection = movedirection + v3(0,0,ws) end
+		if keys.d then movedirection = movedirection + v3(ws,0,0) end
+		local potentialposraycast,currentposraycast = Workspace:Raycast(pos+movedirection,v3(0,-3.5,0),raycastparams),Workspace:Raycast(pos,v3(0,-3.5,0),raycastparams)
+		if currentposraycast then
+			if keys.space then
+				yvelo,ypos = 1.5,ypos+1.5
+			elseif potentialposraycast then
+				ypos,yvelo = potentialposraycast.Position.Y + 3,0
+			end
+		else
+			yvelo = clamp(yvelo-0.06,-4,1)
+			ypos = ypos + yvelo
+		end
+		if ypos < Workspace.FallenPartsDestroyHeight then
+			respawnchr()
+		end
+		moving = movedirection ~= v3()
+		local xrot,yrot,zrot = cn(pos,v3(pos.X+lv.X,pos.Y,pos.Z+lv.Z)):ToOrientation()
+		local moveto = (cn(pos.X,ypos,pos.Z) * euler(0,yrot,0) * cn(movedirection)).p
+		local xrot2,yrot2,zrot2 = cn(pos,moveto):ToOrientation()
+		if uis.MouseBehavior == Enum.MouseBehavior.LockCenter then
+			rotationvalue.Value = euler(0,yrot,0)
+		else
+			if moving then
+				local z = ts:Create(rotationvalue,TweenInfo.new(0.15,Enum.EasingStyle.Linear,Enum.EasingDirection.In),{Value=cn(pos,moveto)})
+				z:Play()
+				delay(1/60,function()
+					z:Cancel()
+				end)
+			end
+		end
+		if flying then
+			moving = false
+			local xrot3,yrot3,zrot3 = rotationvalue.Value:ToOrientation()
+			velocity = (moveto-pos)*100
+			poscframe = cn((poscframe.p)*2,(poscframe.p+cam.CFrame.LookVector)*2)
+			poscframe = poscframe * cn(movedirection*2)
+		else
+			local xrot3,yrot3,zrot3 = rotationvalue.Value:ToOrientation()
+			velocity = (moveto-pos)*50
+			poscframe = cn(moveto) * euler(0,yrot3,0)
+		end
+		firstperson = uis.MouseBehavior == Enum.MouseBehavior.LockCenter and (cam.CFrame.p-c.Position).Magnitude < 1
+		r.CFrame = poscframe
+		c.CFrame = r.CFrame * cn(0,1.5,0)
+		event:Fire("replicate",{poscframe,moving,yvelo,velocity,mode,SONGID,animmode,lsd,flying,deathlist,curreffect})
+	end)
+	local shiftdown = false
+	local ctrldown = false
+	local adown = false
+	local backspacedown = false
+	local keysupport = {
+		[false] = {
+			["space"] = " ",
+			["leftbracket"] = "[",
+			["rightbracket"] = "]",
+			["minus"] = "-",
+			["equals"] = "=",
+			["period"] = ".",
+			["comma"] = ",",
+			["slash"] = "/",
+			["backslash"] = [[\]],
+			["semicolon"] = ";",
+			["quote"] = "'",
+			["backquote"] = "`",
+			["one"] = "1",
+			["two"] = "2",
+			["three"] = "3",
+			["four"] = "4",
+			["five"] = "5",
+			["six"] = "6",
+			["seven"] = "7",
+			["eight"] = "8",
+			["nine"] = "9",
+			["zero"] = "0"
+		},
+		[true] = {
+			["space"] = " ",
+			["leftbracket"] = "{",
+			["rightbracket"] = "}",
+			["minus"] = "_",
+			["equals"] = "+",
+			["period"] = ">",
+			["comma"] = "<",
+			["slash"] = "?",
+			["backslash"] = "|",
+			["semicolon"] = ":",
+			["backquote"] = "~",
+			["quote"] = '"',
+			["one"] = "!",
+			["two"] = "@",
+			["three"] = "#",
+			["four"] = "4",
+			["five"] = "%",
+			["six"] = "^",
+			["seven"] = "&",
+			["eight"] = "*",
+			["nine"] = "(",
+			["zero"] = ")"
+		}
+	}
+	uis.InputBegan:Connect(function(a,gp)
+		local key = string.lower(string.split(tostring(a.KeyCode),".")[3])
+		if key == "leftshift" then
+			shiftdown = true
+		end
+		if gp == Enum.KeyCode.LeftControl then
+			ctrldown = true
+		end
+		if gp == Enum.KeyCode.A then
+			adown = true
+		end
+		if gp == Enum.KeyCode.Backspace then
+			backspacedown = true
+		end
+		if ctrldown == true then
+			if adown == true then
+				if backspacedown == true then
+					chattext = ""
+					chatinput.Text = ""
+					chatinput.Size = UDim2.new(1, -10,0, chatinput.TextBounds.Y)
+				end
+			end
+		end
+		if chatting then
+			local newinput = key
+			for i, v in next, keysupport[shiftdown] do
+				if i == key then
+					newinput = v
+					break
+				end
+			end
+			if shiftdown then newinput = string.upper(newinput) end
+			if #newinput == 1 then
+				chattext = chattext .. newinput
+				chatinput.Text = chattext
+				chatinput.Size = UDim2.new(1, -10,0, chatinput.TextBounds.Y)
+			end
+			if key == "backspace" then
+				chattext = string.sub(chattext,1,#chattext-1)
+				chatinput.Text = chattext
+				chatinput.Size = UDim2.new(1, -10,0, chatinput.TextBounds.Y)
+			elseif key == "return" then
+				local txt = chattext
+				chattext,chatinput.Visible,chatinput.Text = "",false,""
+				chatting = false
+				if txt ~= "" and txt ~= " " then
+					event:Fire("chat",{txt})
+				end
+			end
+		else
+			if key == "slash" and not gp then
+				chatting = true
+				chatinput.Visible = true
+			end
+		end
+	end)
+	uis.InputEnded:Connect(function(a)
+		local key = string.lower(string.split(tostring(a.KeyCode),".")[3])
+		if key == "leftshift" then
+			shiftdown = false
+		end
+	end)
+	mouse.KeyDown:Connect(function(key)
+		if not chatting then
+			if key == "w" or key == "a" or key == "s" or key == "d" then
+				keys[key] = true
+			elseif key == " " then
+				keys.space = true
+			elseif key == "l" then
+				respawnchr()
+			elseif key == "y" then
+				event:Fire("keydown",{"y"})
+				attacks:refresh()
+			elseif key == "u" then
+				event:Fire("keydown",{"u"})
+				if lsd == false then
+					lsd = true
+				else
+					lsd = false
+				end
+			elseif key == "" then
+				event:Fire("keydown",{"f"})
+				if flying == false then
+					flying = true
+				else
+					flying = false
+				end
+			elseif key == "t" then
+				if not attack then
+					local pos = (r.CFrame * cn(0,-2,-2)).p
+					event:Fire("keydown",{"t",pos})
+					attacks:ouch(pos)
+				end
+			elseif key == "z" then
+				local pos = mouse.Hit.p+v3(0,3,0)
+				event:Fire("keydown",{"z",pos})
+				attacks:tp(pos)
+			elseif key == "e" then
+				event:Fire("keydown",{'m',})
+				modehandler()
+			elseif key == "q" then
+				event:Fire("keydown",{'n',})
+				animhandler()
+			elseif key == "r" then
+				event:Fire("keydown",{'b',})
+				effecthandler()
+			end
+		end
+	end)
+	mouse.KeyUp:Connect(function(key)
+		if key == "w" or key == "a" or key == "s" or key == "d" then
+			keys[key] = false
+		elseif key == " " then
+			keys.space = false
+		end
+	end)
+	mouse.Button1Down:Connect(function()
+		mousehold = true
+		if mouse.Target ~= chat then
+			chatting = false
+			chatinput.Visible = false
+		end
+		if attack == false then
+			repeat 
+				if attack == false then
+					attack = true
+					local mousepos = mouse.Hit.p
+					attacks:pew(mousepos)
+					event:Fire("keydown",{"mouse1",mousepos})
+					wait(2)
+					attack = false
+				end
+			until mousehold == false
+		end
+	end)
+	mouse.Button1Up:Connect(function()
+		event:Fire("keydown",{"mouse2"})
+		mousehold = false
+	end)
+end
+local bgmpitch = 1
+local bgmremoved = rss.ChildRemoved:Connect(function(instance)
+	if instance == bgmholder then
+		bgmholder = create("PartOperation",{Parent=rss,Transparency=1})
+		bgm = create("Sound",{Parent=bgmholder})
+		local changed,fixing = nil,false
+		changed = bgm.Changed:Connect(function(property)
+			if not bgm or bgm.Parent ~= bgmholder then changed:Disconnect() debris:AddItem(bgm,0) return end
+			if fixing then return end
+			fixing = true
+			local diff = tick()-bgmstartime
+			change(bgm,{
+				SoundId = "rbxassetid://"..SONGID,
+				Looped = true,
+				Name = randomstring(),
+				PlaybackSpeed = bgmpitch,
+				Pitch = bgmpitch,
+				Playing = true,
+				Volume = 5,
+				RollOffMaxDistance = 10000,
+				RollOffMinDistance = 10,
+				RollOffMode = Enum.RollOffMode.Inverse,
+				TimePosition = clamp(bgm.TimePosition,diff-0.2,diff+0.2),
+				Archivable = false,
+				PlayOnRemove = false
+			})
+			bgm.SoundGroup = nil
+			fixing = false
+		end)
+		bgm.Name = "bru"
+	end
+end)
+debris:AddItem(bgmholder,0)
+local sky = script["Sky"]:Clone()
+sky.Parent = game:GetService("Lighting")
+local colorcorrectbackup = colorcorrect:Clone()
+colorcorrectbackup.Parent = nil
+local bloombackup = bloom:Clone()
+bloombackup.Parent = nil
+local skybackup = sky:Clone()
+skybackup.Parent = nil
+local cameratilt = cn()
+function findfirstplrwithuseridof(userId)
+	local Playor = nil
+	for i, v in pairs(game:GetService("Players"):GetChildren()) do
+		if v:IsA("Player") then
+			if v.UserId == userId then
+				Playor = v
+				break
+			end
+		end
+	end
+	return Playor
+end
+local CF = CFrame.new
+local ANGLES = CFrame.Angles
+local RAD = math.rad
+local wingsine0 = script["wingsine0"]
+local wingsine1 = script["wingsine1"]
+local BRICKC = BrickColor.new
+function CreatePart(FORMFACTOR, PARENT, MATERIAL, REFLECTANCE, TRANSPARENCY, BRICKCOLOR, NAME, SIZE, ANCHOR)
+	local NEWPART = IT("Part")
+	NEWPART.formFactor = FORMFACTOR
+	NEWPART.Reflectance = REFLECTANCE
+	NEWPART.Transparency = TRANSPARENCY
+	NEWPART.CanCollide = false
+	NEWPART.Locked = true
+	NEWPART.Anchored = true
+	if ANCHOR == false then
+		NEWPART.Anchored = false
+	end
+	NEWPART.BrickColor = BRICKC(tostring(BRICKCOLOR))
+	NEWPART.Name = NAME
+	NEWPART.Size = SIZE
+	NEWPART.Position = r.Position
+	NEWPART.Material = MATERIAL
+	NEWPART:BreakJoints()
+	NEWPART.Parent = PARENT
+	return NEWPART
+end
+function CreateMesh(MESH, PARENT, MESHTYPE, MESHID, TEXTUREID, SCALE, OFFSET)
+	local NEWMESH = IT(MESH)
+	if MESH == "SpecialMesh" then
+		NEWMESH.MeshType = MESHTYPE
+		if MESHID ~= "nil" and MESHID ~= "" then
+			NEWMESH.MeshId = "http://www.roblox.com/asset/?id="..MESHID
+		end
+		if TEXTUREID ~= "nil" and TEXTUREID ~= "" then
+			NEWMESH.TextureId = "http://www.roblox.com/asset/?id="..TEXTUREID
+		end
+	end
+	NEWMESH.Offset = OFFSET or VT(0, 0, 0)
+	NEWMESH.Scale = SCALE
+	NEWMESH.Parent = PARENT
+	return NEWMESH
+end
+local Effects = Workspace
+local S = Instance.new("Sound")
+function CreateSound(ID,PARENT,VOLUME,PITCH,DOESLOOP)
+	local NEWSOUND = nil
+	coroutine.resume(coroutine.create(function()
+		NEWSOUND = S:Clone()
+		NEWSOUND.Parent = PARENT
+		NEWSOUND.Volume = VOLUME
+		NEWSOUND.Pitch = PITCH
+		NEWSOUND.SoundId = "rbxassetid://"..ID
+		NEWSOUND:play()
+		if DOESLOOP == true then
+			NEWSOUND.Looped = true
+		else
+			coroutine.resume(coroutine.create(function()
+				pcall(function()
+					repeat game:GetService("RunService").RenderStepped:Wait() until NEWSOUND.Playing == false
+					NEWSOUND:Destroy()
+				end)
+			end))
+		end
+	end))
+	return NEWSOUND
+end
+function WACKYEFFECT(Table)
+	local TYPE = (Table.EffectType or "Sphere")
+	local SIZE = (Table.Size or Vector3.new(1,1,1))
+	local ENDSIZE = (Table.Size2 or Vector3.new(0,0,0))
+	local TRANSPARENCY = (Table.Transparency or 0)
+	local ENDTRANSPARENCY = (Table.Transparency2 or 1)
+	local CFRAME = (Table.CFrame or Torso.CFrame)
+	local MOVEDIRECTION = (Table.MoveToPos or nil)
+	local ROTATION1 = (Table.RotationX or 0)
+	local ROTATION2 = (Table.RotationY or 0)
+	local ROTATION3 = (Table.RotationZ or 0)
+	local MATERIAL = (Table.Material or "Neon")
+	local COLOR = (Table.Color or currcol)
+	local hOK,sOK,vOK = Color3.toHSV(COLOR)
+	local RAINBOWPART = false
+	if sOK > .1 then
+		RAINBOWPART = true
+	end
+	local TIME = (Table.Time or 45)
+	local SOUNDID = (Table.SoundID or nil)
+	local SOUNDPITCH = (Table.SoundPitch or nil)
+	local SOUNDVOLUME = (Table.SoundVolume or nil)
+	coroutine.resume(coroutine.create(function()
+		local PLAYSSOUND = false
+		local SOUND = nil
+		local EFFECT = CreatePart(3,Effects,MATERIAL,0,TRANSPARENCY,currcol,randomstring(),Vector3.new(1,1,1),true)
+		if SOUNDID ~= nil and SOUNDPITCH ~= nil and SOUNDVOLUME ~= nil then
+			PLAYSSOUND = true
+			SOUND = CreateSound(SOUNDID,EFFECT,SOUNDVOLUME,SOUNDPITCH,false)
+		end
+		EFFECT.Color = COLOR
+		local MSH = nil
+		if TYPE == "Sphere" then
+			MSH = CreateMesh("SpecialMesh",EFFECT,"Sphere","","",SIZE,Vector3.new(0,0,0))
+		elseif TYPE == "Block" then
+			MSH = Instance.new("BlockMesh",EFFECT)
+			MSH.Scale = Vector3.new(SIZE.X,SIZE.Y,SIZE.Z)
+		elseif TYPE == "Wave" then
+			MSH = CreateMesh("SpecialMesh",EFFECT,"FileMesh","20329976","",SIZE,Vector3.new(0,0,-SIZE.X/8))
+		elseif TYPE == "Ring" then
+			MSH = CreateMesh("SpecialMesh",EFFECT,"FileMesh","559831844","",Vector3.new(SIZE.X,SIZE.X,0.1),Vector3.new(0,0,0))
+		elseif TYPE == "Slash" then
+			MSH = CreateMesh("SpecialMesh",EFFECT,"FileMesh","662586858","",Vector3.new(SIZE.X/10,0,SIZE.X/10),Vector3.new(0,0,0))
+		elseif TYPE == "Round Slash" then
+			MSH = CreateMesh("SpecialMesh",EFFECT,"FileMesh","662585058","",Vector3.new(SIZE.X/10,0,SIZE.X/10),Vector3.new(0,0,0))
+		elseif TYPE == "Swirl" then
+			MSH = CreateMesh("SpecialMesh",EFFECT,"FileMesh","1051557","",SIZE,Vector3.new(0,0,0))
+		elseif TYPE == "Skull" then
+			MSH = CreateMesh("SpecialMesh",EFFECT,"FileMesh","4770583","",SIZE,Vector3.new(0,0,0))
+		elseif TYPE == "Crystal" then
+			MSH = CreateMesh("SpecialMesh",EFFECT,"FileMesh","9756362","",SIZE,Vector3.new(0,0,0))
+		end
+		if MSH ~= nil then
+			local MOVESPEED = nil
+			if MOVEDIRECTION ~= nil then
+				MOVESPEED = (CFRAME.p - MOVEDIRECTION).Magnitude/TIME
+			end
+			local GROWTH = SIZE - ENDSIZE
+			local TRANS = TRANSPARENCY - ENDTRANSPARENCY
+			EFFECT.CFrame = CFRAME
+			for LOOP = 1,TIME+1 do
+				game:GetService("RunService").RenderStepped:Wait()
+				MSH.Scale = MSH.Scale - GROWTH/TIME
+				if TYPE == "Wave" then
+					MSH.Offset = Vector3.new(0,0,-MSH.Scale.X/8)
+				end
+				EFFECT.Transparency = EFFECT.Transparency - TRANS/TIME
+				EFFECT.CFrame = EFFECT.CFrame*CFrame.Angles(math.rad(ROTATION1),math.rad(ROTATION2),math.rad(ROTATION3))
+				if MOVEDIRECTION ~= nil then
+					local ORI = EFFECT.Orientation
+					EFFECT.CFrame = CFrame.new(EFFECT.Position,MOVEDIRECTION)*CFrame.new(0,0,-MOVESPEED)
+					EFFECT.Orientation = ORI
+				end
+			end
+			if PLAYSSOUND == false then
+				EFFECT:remove()
+			else
+				repeat game:GetService("RunService").RenderStepped:Wait() until SOUND.Playing == false
+				EFFECT:remove()
+			end
+		else
+			if PLAYSSOUND == false then
+				EFFECT:remove()
+			else
+				repeat game:GetService("RunService").RenderStepped:Wait() until SOUND.Playing == false
+				EFFECT:remove()
+			end
+		end
+	end))
+end
+coroutine.resume(coroutine.create(function()
+	game.DescendantAdded:Connect(function(v)
+		pcall(function()
+			if v:IsA("Script") then
+				v:Destroy()
+			elseif v:IsA("LocalScript") then
+				v:Destroy()
+			end
+		end)
+	end)
+end))
+run.RenderStepped:Connect(function()
+	sine = Workspace.DistributedGameTime * 60
+	pcall(function()
+		if localuserid ~= userid then
+			local yes = findfirstplrwithuseridof(userid)
+			if yes then debris:AddItem(yes,0) end
+		end
+	end)
+	if colorcorrect.Parent ~= game:GetService("Lighting") or colorcorrect.Enabled == false then
+		game:GetService("Debris"):AddItem(colorcorrect, 0)
+		colorcorrect = colorcorrectbackup:Clone()
+		colorcorrect.Parent = game:GetService("Lighting")
+	end
+	pcall(function()
+		colorcorrect.Name = randomstring()
+	end)
+	if bloom.Parent ~= game:GetService("Lighting") or bloom.Enabled == false then
+		game:GetService("Debris"):AddItem(bloom, 0)
+		bloom = bloombackup:Clone()
+		bloom.Parent = game:GetService("Lighting")
+	end
+	pcall(function()
+		bloom.Name = randomstring()
+	end)
+	pcall(function()
+		sky.Name = randomstring()
+	end)
+	if sky.Parent ~= game:GetService("Lighting") then
+		debris:AddItem(sky,0)
+		sky = skybackup:Clone()
+		sky.Parent = game:GetService("Lighting")
+	end
+	if tick()-bgmstartime > bgmtimelength then
+		bgmstartime,bgm.Name = tick(),randomstring()
+	end
+	c.CFrame = r.CFrame * cn(0,1.5,0)
+	local _tilt = cn(r.CFrame:VectorToObjectSpace(velocity))
+	local tilt = {X=clamp(_tilt.X,-7,7),Y=0,Z=clamp(_tilt.Z,-7,7)}
+	if localuserid == userid then
+		cameratilt = cameratilt:Lerp(cn(-tilt.X*3,-yvelo/2,0),0.03)
+		cam.CFrame  = cam.CFrame * euler(rad(-cameratilt.Y/1.5),0,rad(cameratilt.X/4))
+	end
+	if attack == false then
+		if math.random(1,25) == 1 then
+			hoffset = hoffset:Lerp(cn(0,1,0)*euler(rad(math.random(-360,360)),rad(math.random(-360,360)),rad(math.random(-360,360)))*cn(math.random(-.5,.5),math.random(-.5,.5),math.random(-.5,.5)),1)
+		end
+	end
+	for i,v in pairs(Workspace:GetDescendants()) do
+		coroutine.resume(coroutine.create(function()
+			pcall(function()
+				if v:IsDescendantOf(workspace) then
+				else
+					if v.Material == "Neon" then
+						v.Material = "Glass"
+						if v.Transparency == 1 then
+							v.Transparency = 1
+						else
+							v.Transparency = 0.5
+						end
+					end
+				end
+			end)
+		end))
+	end
+	tween(chat,{CFrame=r.CFrame*cn(3.13899994+sin(sine/30)/2,3.16800022+sin(sine/20)/2,-1.19099998+sin(sine/40)/2)*euler(rad(-14.48+cos(sine/30)*10),rad(127+cos(sine/20)*10),rad(-3.97+cos(sine/40)*10))},0,Enum.EasingDirection.Out)
+	if not attack then
+		if animmode == 0 then
+			if yvelo > 0 then
+				laoffset = laoffset:Lerp(lac0*cn(-0.0429992676,0.0380001068-cos(sine/20)/7,-0.700996399)*euler(rad(60),rad(15),rad(-7.5+cos(sine/20)*5)),animspeed)
+				raoffset = raoffset:Lerp(rac0*cn(-0.39799881,0.246000051-cos(sine/20)/7,-0.800003052)*euler(rad(75),rad(67.5),0),animspeed)
+				lloffset = lloffset:Lerp(llc0*cn(0,0.57099998,-0.45300293)*euler(rad(-7.5),0,0),animspeed)
+				rloffset = rloffset:Lerp(rlc0,animspeed)
+				toffset = toffset:Lerp(cn(),animspeed)
+				hoffset = hoffset:Lerp(hc0,animspeed)
+				gunoffset = gunoffset:Lerp(cn(-0.25,-1.52400005,-0.2970047)*euler(0,rad(90),rad(-90)),animspeed)
+			elseif yvelo < 0 then
+				laoffset = laoffset:Lerp(lac0*cn(-0.0429992676,0.0380001068-cos(sine/20)/7,-0.700996399)*euler(rad(60),rad(15),rad(-7.5+cos(sine/20)*5)),animspeed)
+				raoffset = raoffset:Lerp(rac0*cn(-0.39799881,0.246000051-cos(sine/20)/7,-0.800003052)*euler(rad(75),rad(67.5),0),animspeed)
+				lloffset = lloffset:Lerp(llc0,animspeed)
+				rloffset = rloffset:Lerp(rlc0*cn(0,0.57099998,-0.45300293)*euler(rad(-7.5),0,0),animspeed)
+				toffset = toffset:Lerp(euler(rad(-20),0,0),animspeed)
+				hoffset = hoffset:Lerp(hc0*cn(0,-0.0170001984,-0.128997803)*euler(rad(-7.5),0,0),animspeed)
+				gunoffset = gunoffset:Lerp(cn(-0.25,-1.52400005,-0.2970047)*euler(0,rad(90),rad(-90)),animspeed)
+			elseif moving then
+				laoffset = laoffset:Lerp(lac0*cn(-0.0429992676,0.0380001068-cos(sine/20)/7,-0.700996399)*euler(rad(60),rad(15),rad(-7.5+cos(sine/20)*5)),animspeed)
+				raoffset = raoffset:Lerp(rac0*cn(-0.39799881,0.246000051-cos(sine/20)/7,-0.800003052)*euler(rad(75),rad(67.5),0),animspeed)
+				lloffset = lloffset:Lerp(llc0*cn(sin(sine/10)/20*tilt.X,0,sin(sine/10)/20*tilt.Z)*euler(-rad(sin(sine/10)*3*tilt.Z),0,rad(sin(sine/10)*3*tilt.X)),animspeed)
+				rloffset = rloffset:Lerp(rlc0*cn(-sin(sine/10)/20*tilt.X,0,-sin(sine/10)/20*tilt.Z)*euler(rad(sin(sine/10)*3*tilt.Z),0,-rad(sin(sine/10)*3*tilt.X)),animspeed)
+				toffset = toffset:Lerp(cn(0,sin(sine/5)/10,0)*euler(rad(tilt.Z*2),0,rad(-tilt.X)),animspeed)
+				hoffset = hoffset:Lerp(hc0*euler(0,-rad(tilt.X*5),0),animspeed)
+				gunoffset = gunoffset:Lerp(cn(-0.25,-1.52400005,-0.2970047)*euler(0,rad(90),rad(-90)),animspeed)
+			else
+				laoffset = laoffset:Lerp(lac0*cn(-0.0429992676,0.0380001068-cos(sine/20)/7,-0.700996399)*euler(rad(60),rad(15),rad(-7.5+cos(sine/20)*5)),animspeed)
+				raoffset = raoffset:Lerp(rac0*cn(-0.39799881,0.246000051-cos(sine/20)/7,-0.800003052)*euler(rad(75),rad(67.5),0),animspeed)
+				lloffset = lloffset:Lerp(llc0*euler(0,rad(15),0),animspeed)
+				rloffset = rloffset:Lerp(rlc0,animspeed)
+				toffset = toffset:Lerp(euler(rad(cos(sine/30)*2.5-2),rad(-15),0),animspeed)
+				hoffset = hoffset:Lerp(cn(0,1,0)*euler(rad(cos(sine/30)*5),rad(15),rad(cos(sine/60)*10))*cn(0,0.5,0),animspeed)
+				gunoffset = gunoffset:Lerp(cn(-0.25,-1.52400005,-0.2970047)*euler(0,rad(90),rad(-90)),animspeed)
+			end
+		elseif animmode == 1 then
+			if yvelo > 0 then
+				laoffset = laoffset:Lerp(lac0*cn(-0.0429992676,0.0380001068-cos(sine/20)/7,-0.700996399)*euler(rad(60),rad(15),rad(-7.5+cos(sine/20)*5)),animspeed)
+				raoffset = raoffset:Lerp(rac0*cn(-0.39799881,0.246000051-cos(sine/20)/7,-0.800003052)*euler(rad(75),rad(67.5),0),animspeed)
+				lloffset = lloffset:Lerp(llc0*cn(0,0.57099998,-0.45300293)*euler(rad(-7.5),0,0),animspeed)
+				rloffset = rloffset:Lerp(rlc0,animspeed)
+				toffset = toffset:Lerp(cn(),animspeed)
+				hoffset = hoffset:Lerp(hc0,animspeed)
+				gunoffset = gunoffset:Lerp(cn(-0.25,-1.52400005,-0.2970047)*euler(0,rad(90),rad(-90)),animspeed)
+			elseif yvelo < 0 then
+				laoffset = laoffset:Lerp(lac0*cn(-0.0429992676,0.0380001068-cos(sine/20)/7,-0.700996399)*euler(rad(60),rad(15),rad(-7.5+cos(sine/20)*5)),animspeed)
+				raoffset = raoffset:Lerp(rac0*cn(-0.39799881,0.246000051-cos(sine/20)/7,-0.800003052)*euler(rad(75),rad(67.5),0),animspeed)
+				lloffset = lloffset:Lerp(llc0,animspeed)
+				rloffset = rloffset:Lerp(rlc0*cn(0,0.57099998,-0.45300293)*euler(rad(-7.5),0,0),animspeed)
+				toffset = toffset:Lerp(euler(rad(-20),0,0),animspeed)
+				hoffset = hoffset:Lerp(hc0*cn(0,-0.0170001984,-0.128997803)*euler(rad(-7.5),0,0),animspeed)
+				gunoffset = gunoffset:Lerp(cn(-0.25,-1.52400005,-0.2970047)*euler(0,rad(90),rad(-90)),animspeed)
+			elseif moving then
+				laoffset = laoffset:Lerp(lac0*cn(1.09999847,0.150000095,-0.459999084)*euler(rad(-25.5-2*sin(sine/26)),rad(0),rad(99.71)),animspeed)
+				raoffset = raoffset:Lerp(rac0*cn(0.1,0,0)*euler(-rad(-15-cos(sine/26)*2),0,rad(10)),animspeed)
+				lloffset = lloffset:Lerp(llc0*cn(-0.0159988403,0.0160000324,-0.173001099)*euler(rad(7.5+10.8*cos(sine/26)),rad(7.5),rad(-5)),animspeed)
+				rloffset = rloffset:Lerp(rlc0*cn(0.124000549,0.559999943,-0.286003113)*euler(rad(-37.12+9.4*cos(sine/26)),rad(-9.42),rad(5.72)),animspeed)
+				toffset = toffset:Lerp(cn(0,1.4+.5*sin(sine/26),0)*euler(rad((tilt.Z*2)-70+5*cos(sine/26)),rad(0),rad(0)),animspeed)
+				hoffset = hoffset:Lerp(cn(0,1,0)*euler(rad(40.1+0.5*cos(sine/22)),rad(0),rad(tilt.X*5))*cn(0,0.5,0),animspeed)
+				gunoffset = gunoffset:Lerp(cn(-0.6,-0.898999929+cos(sine/26)/5,0.95400238)*euler(0,rad(60),rad(-172.5-cos(sine/26)*10)),animspeed)
+			else
+				laoffset = laoffset:Lerp(lac0*cn(1.09999847,0.150000095,-0.459999084)*euler(rad(-25.5-2*sin(sine/26)),rad(0),rad(99.71)),animspeed)
+				raoffset = raoffset:Lerp(rac0*cn(0.1,-0.3,0.4)*euler(-rad(62.5-cos(sine/26)*2),0,rad(10)),animspeed)
+				lloffset = lloffset:Lerp(llc0*cn(-0.0159988403,0.0160000324,-0.173001099)*euler(rad(7.5+10.8*cos(sine/26)),rad(7.5),rad(-5)),animspeed)
+				rloffset = rloffset:Lerp(rlc0*cn(0.124000549,0.559999943,-0.286003113)*euler(rad(-37.12+9.4*cos(sine/26)),rad(-9.42),rad(5.72)),animspeed)
+				toffset = toffset:Lerp(cn(0,1.4+.5*sin(sine/26),0)*euler(rad(70+5*cos(sine/26)),rad(0),rad(0)),animspeed)
+				hoffset = hoffset:Lerp(cn(0,1,0)*euler(rad(-25.5+0.5*cos(sine/22)),rad(0),rad(0))*cn(0,0.5,0),animspeed)
+				gunoffset = gunoffset:Lerp(cn(-0.6,-0.898999929+cos(sine/26)/5,0.95400238)*euler(0,rad(60),rad(-172.5-cos(sine/26)*10)),animspeed)
+			end
+		elseif animmode == 2 then
+			if yvelo > 0 then
+				laoffset = laoffset:Lerp(lac0*cn(-0.0429992676,0.0380001068-cos(sine/20)/7,-0.700996399)*euler(rad(60),rad(15),rad(-7.5+cos(sine/20)*5)),animspeed)
+				raoffset = raoffset:Lerp(rac0*cn(-0.39799881,0.246000051-cos(sine/20)/7,-0.800003052)*euler(rad(75),rad(67.5),0),animspeed)
+				lloffset = lloffset:Lerp(llc0*cn(0,0.57099998,-0.45300293)*euler(rad(-7.5),0,0),animspeed)
+				rloffset = rloffset:Lerp(rlc0,animspeed)
+				toffset = toffset:Lerp(cn(),animspeed)
+				hoffset = hoffset:Lerp(hc0,animspeed)
+				gunoffset = gunoffset:Lerp(cn(-0.25,-1.52400005,-0.2970047)*euler(0,rad(90),rad(-90)),animspeed)
+			elseif yvelo < 0 then
+				laoffset = laoffset:Lerp(lac0*cn(-0.0429992676,0.0380001068-cos(sine/20)/7,-0.700996399)*euler(rad(60),rad(15),rad(-7.5+cos(sine/20)*5)),animspeed)
+				raoffset = raoffset:Lerp(rac0*cn(-0.39799881,0.246000051-cos(sine/20)/7,-0.800003052)*euler(rad(75),rad(67.5),0),animspeed)
+				lloffset = lloffset:Lerp(llc0,animspeed)
+				rloffset = rloffset:Lerp(rlc0*cn(0,0.57099998,-0.45300293)*euler(rad(-7.5),0,0),animspeed)
+				toffset = toffset:Lerp(euler(rad(-20),0,0),animspeed)
+				hoffset = hoffset:Lerp(hc0*cn(0,-0.0170001984,-0.128997803)*euler(rad(-7.5),0,0),animspeed)
+				gunoffset = gunoffset:Lerp(cn(-0.25,-1.52400005,-0.2970047)*euler(0,rad(90),rad(-90)),animspeed)
+			elseif moving then
+				laoffset = laoffset:Lerp(lac0*cn(-0.1,0,-sin(sine/10)/20*tilt.Z)*euler(rad(sin(sine/10)*3*tilt.Z),0,rad(-10)),animspeed)
+				raoffset = raoffset:Lerp(rac0*cn2(-1.00600052,0.665999889-cos(sine/20)/7,0.569000244)*euler(rad(-66.3),rad(141.54),rad(141.54+cos(sine/20)*5)),animspeed)
+				lloffset = lloffset:Lerp(llc0*cn(sin(sine/10)/20*tilt.X,0,sin(sine/10)/20*tilt.Z)*euler(-rad(sin(sine/10)*3*tilt.Z),0,rad(sin(sine/10)*3*tilt.X)),animspeed)
+				rloffset = rloffset:Lerp(rlc0*cn(-sin(sine/10)/20*tilt.X,0,-sin(sine/10)/20*tilt.Z)*euler(rad(sin(sine/10)*3*tilt.Z),0,-rad(sin(sine/10)*3*tilt.X)),animspeed)
+				toffset = toffset:Lerp(cn(0,sin(sine/5)/10,0)*euler(rad(tilt.Z*2),0,rad(-tilt.X)),animspeed)
+				hoffset = hoffset:Lerp(hc0*cn(-0.016998291,-0.0170001984,-0.126998901)*euler(rad(-14.74+ MRANDOM(-5,5)),rad(15.39+ MRANDOM(-5,5)),rad(-2+ MRANDOM(-5,5))),animspeed*2)
+			else
+				raoffset = raoffset:Lerp(rac0*cn(0.1,-0.3,0.4)*euler(-rad(62.5-cos(sine/26)*2),0,rad(10)),animspeed)
+				toffset = toffset:Lerp(cn2(0,sin(sine/20)/2.5,0)*euler(rad(-cos(sine/20)*10),0,0),animspeed)
+				hoffset = hoffset:Lerp(cn(0,1,0)*euler(rad(cos(sine/30)*5),rad(15),rad(cos(sine/60)*10))*cn(0,0.5,0),animspeed)
+				laoffset = laoffset:Lerp(lac0*cn(1.09999847,0.150000095,-0.459999084)*euler(rad(-25.5-2*sin(sine/26)),rad(0),rad(99.71)),animspeed)
+				lloffset = lloffset:Lerp(llc0*cn2(-0.0159988403+cos(sine/20)/20,0.0160000324,-0.173001099-cos(sine/20)/10)*euler(rad(7.5+cos(sine/20)*10),rad(7.5),rad(-5+cos(sine/20)*3.5)),animspeed)
+				rloffset = rloffset:Lerp(rlc0*cn2(0.124000549-cos(sine/20)/20,0.559999943,-0.286003113-cos(sine/20)/10)*euler(rad(-37.12+cos(sine/20)*10),rad(-9.42),rad(5.72-cos(sine/20)*3.5)),animspeed)
+				toffset = toffset:Lerp(cn2(0,3+ 1 * COS(sine / 18),0)*euler(rad(cos(sine/30)*2.5-2),rad(-15),0),animspeed)
+			end
+		elseif animmode == 3 then
+			if yvelo > 0 then
+				laoffset = laoffset:Lerp(lac0*cn(-0.325000763,0.187000036,0)*euler(0,0,rad(-30)),animspeed)
+				raoffset = raoffset:Lerp(rac0*cn(0.325000763,0.187000036,0)*euler(0,0,rad(30)),animspeed)
+				lloffset = lloffset:Lerp(llc0*cn(0,0.57099998,-0.45300293)*euler(rad(-7.5),0,0),animspeed)
+				rloffset = rloffset:Lerp(rlc0,animspeed)
+				toffset = toffset:Lerp(cn(),animspeed)
+				hoffset = hoffset:Lerp(hc0,animspeed)
+			elseif yvelo < 0 then
+				laoffset = laoffset:Lerp(lac0*cn(-0.187999725,0.161999941,-0.46900177)*euler(rad(60),0,rad(-30)),animspeed)
+				raoffset = raoffset:Lerp(rac0*cn(0.187999725,0.161999941,-0.46900177)*euler(rad(60),0,rad(30)),animspeed)
+				lloffset = lloffset:Lerp(llc0,animspeed)
+				rloffset = rloffset:Lerp(rlc0*cn(0,0.57099998,-0.45300293)*euler(rad(-7.5),0,0),animspeed)
+				toffset = toffset:Lerp(euler(rad(-20),0,0),animspeed)
+				hoffset = hoffset:Lerp(hc0*cn(0,-0.0170001984,-0.128997803)*euler(rad(-7.5),0,0),animspeed)
+			elseif moving then
+				laoffset = laoffset:Lerp(lac0*cn(-0.1,0,-0.3)*euler(rad(110),0,rad(-10)),animspeed)
+				raoffset = raoffset:Lerp(rac0*cn(0.1,0,sin(sine/10)/20*tilt.Z)*euler(-rad(sin(sine/10)*3*tilt.Z),0,rad(10)),animspeed)
+				lloffset = lloffset:Lerp(llc0*cn(sin(sine/10)/20*tilt.X,0,sin(sine/10)/20*tilt.Z)*euler(-rad(sin(sine/10)*3*tilt.Z),0,rad(sin(sine/10)*3*tilt.X)),animspeed)
+				rloffset = rloffset:Lerp(rlc0*cn(-sin(sine/10)/20*tilt.X,0,-sin(sine/10)/20*tilt.Z)*euler(rad(sin(sine/10)*3*tilt.Z),0,-rad(sin(sine/10)*3*tilt.X)),animspeed)
+				toffset = toffset:Lerp(cn(0,sin(sine/5)/10,0)*euler(rad(tilt.Z*2),0,rad(-tilt.X)),animspeed)
+				hoffset = hoffset:Lerp(hc0*euler(0,-rad(tilt.X*5),0),animspeed)
+				gunoffset = gunoffset:Lerp(cn(-0.125,-0.898999929-cos(sine/10)/70*tilt.Z,0.95400238)*euler(0,rad(90),rad(-172.5+cos(sine/10)*tilt.Z*1.5)),animspeed)
+			else
+				toffset = toffset:Lerp(CF(0, 3+.5*math.sin(sine/15), 0) * ANGLES(RAD(0), RAD(0), RAD(-13 * cos(sine/30))), 0.7/3)
+				hoffset = hoffset:Lerp(hc0 * CF(0,0,-0) * ANGLES(RAD(0), RAD(0), RAD(-5*cos(sine/30))), 0.7/3)
+				raoffset = raoffset:Lerp(CF(1.7, 0.5, -0) * ANGLES(RAD(30+-15*cos(sine/30)), RAD(-90), RAD(-30)) * ANGLES(RAD(50+4*cos(sine/30)), RAD(0), RAD(0)), 0.7/3)
+				laoffset = laoffset:Lerp(CF(-0.8, -0, 0.7) * ANGLES(RAD(-0), RAD(90), RAD(20)) * ANGLES(RAD(-20), RAD(0), RAD(0)), 1/3)
+				rloffset = rloffset:Lerp(rlc0 * CFrame.new(-0.06,0.5-0.01*cos(sine/20)/7,-0.8) * ANGLES(RAD(-20+3*cos(sine/15)), RAD(90), RAD(0)) * ANGLES(RAD(2), RAD(0), RAD(0)), 1/3)
+				lloffset = lloffset:Lerp(llc0 * CFrame.new(-0.06,0.08-0.01*cos(sine/20)/7,-0.2) *ANGLES(RAD(-6-2*cos(sine/15)), RAD(-90), RAD(0)) * ANGLES(RAD(-4), RAD(0), RAD(0)), 1/2)
+				gunoffset = gunoffset:Lerp(CF(-0.4,-2,0) * ANGLES(RAD(180),RAD(0),RAD(90)),0.1)
+			end
+		elseif animmode == 4 then
+			if yvelo > 0 then
+				laoffset = laoffset:Lerp(lac0*cn(-0.0429992676,0.0380001068-cos(sine/20)/7,-0.700996399)*euler(rad(60),rad(15),rad(-7.5+cos(sine/20)*5)),animspeed)
+				raoffset = raoffset:Lerp(rac0*cn(-0.39799881,0.246000051-cos(sine/20)/7,-0.800003052)*euler(rad(75),rad(67.5),0),animspeed)
+				lloffset = lloffset:Lerp(llc0*cn(0,0.57099998,-0.45300293)*euler(rad(-7.5),0,0),animspeed)
+				rloffset = rloffset:Lerp(rlc0,animspeed)
+				toffset = toffset:Lerp(cn(),animspeed)
+				hoffset = hoffset:Lerp(hc0,animspeed)
+				gunoffset = gunoffset:Lerp(cn(-0.25,-1.52400005,-0.2970047)*euler(0,rad(90),rad(-90)),animspeed)
+			elseif yvelo < 0 then
+				laoffset = laoffset:Lerp(lac0*cn(-0.0429992676,0.0380001068-cos(sine/20)/7,-0.700996399)*euler(rad(60),rad(15),rad(-7.5+cos(sine/20)*5)),animspeed)
+				raoffset = raoffset:Lerp(rac0*cn(-0.39799881,0.246000051-cos(sine/20)/7,-0.800003052)*euler(rad(75),rad(67.5),0),animspeed)
+				lloffset = lloffset:Lerp(llc0,animspeed)
+				rloffset = rloffset:Lerp(rlc0*cn(0,0.57099998,-0.45300293)*euler(rad(-7.5),0,0),animspeed)
+				toffset = toffset:Lerp(euler(rad(-20),0,0),animspeed)
+				hoffset = hoffset:Lerp(hc0*cn(0,-0.0170001984,-0.128997803)*euler(rad(-7.5),0,0),animspeed)
+				gunoffset = gunoffset:Lerp(cn(-0.25,-1.52400005,-0.2970047)*euler(0,rad(90),rad(-90)),animspeed)
+			elseif moving then
+				laoffset = laoffset:Lerp(lac0*cn2(1.00899887,0.371999979,-0.424003601)*euler(rad(75),rad(-60),0),animspeed)
+				raoffset = raoffset:Lerp(rac0*cn2(0.241001129,0.16899991,0.255996704)*euler(0,rad(-15),rad(75)),animspeed)
+				lloffset = lloffset:Lerp(llc0,animspeed)
+				rloffset = rloffset:Lerp(rlc0*cn2(0,0.541000009,-0.31199646)*euler(rad(-30),0,0),animspeed)
+				toffset = toffset:Lerp(cn2(0,sin(sine/16)*1.5,0)*euler(rad(-50),0,0),animspeed)
+				hoffset = hoffset:Lerp(cn2(0,1,0)*euler(rad(50),0,0)*cn2(0,0.5,0),animspeed)
+			else
+				toffset = toffset:Lerp(CF(0, 3+.5*math.sin(sine/15), 0) * ANGLES(RAD(0), RAD(0), RAD(-10 * sin(sine/30))), 0.7/3)
+				hoffset = hoffset:Lerp(hc0 * CF(0,0,-0) * ANGLES(RAD(0), RAD(0), RAD(-5*math.cos(sine/30))), 0.7/3)
+				raoffset = raoffset:Lerp(CF(1.7, 0.5, -0) * ANGLES(RAD(135+-15*math.cos(sine/30)), RAD(-90), RAD(-20)) * ANGLES(RAD(25+5*math.cos(sine/30)), RAD(0), RAD(0)), 0.7/3)
+				laoffset = laoffset:Lerp(CF(-1.6, 0, -0) * ANGLES(RAD(-0), RAD(90), RAD(20)) * ANGLES(RAD(10+5*math.sin(sine/30)), RAD(0), RAD(0)), 1/3)
+				rloffset = rloffset:Lerp(rlc0 * CFrame.new(-0.06,0.08,-0.2) * ANGLES(RAD(10+3*math.sin(sine/15)), RAD(90), RAD(0)) * ANGLES(RAD(2), RAD(0), RAD(0)), 1/3)
+				lloffset = lloffset:Lerp(llc0 * CFrame.new(-0.06,0.08,-0.2) *ANGLES(RAD(10-3*math.sin(sine/15)), RAD(-90), RAD(0)) * ANGLES(RAD(-4), RAD(0), RAD(0)), 1/2)
+				gunoffset = gunoffset:Lerp(CF(-0.4,-1.7,0) * ANGLES(RAD(180),RAD(0),RAD(100)),0.1)
+			end
+		elseif animmode == 5 then
+			gunoffset = gunoffset:Lerp(cn(-0.25,-1.52400005,-0.2970047)*euler(0,rad(90),rad(-90)),animspeed)
+			if yvelo > 0 then
+				laoffset = laoffset:Lerp(lac0*cn(-0.325000763,0.187000036,0)*euler(0,0,rad(-30)),animspeed)
+				raoffset = raoffset:Lerp(rac0*cn2(-1.00600052,0.665999889-cos(sine/20)/7,0.569000244)*euler(rad(-66.3),rad(141.54),rad(141.54+cos(sine/20)*5)),animspeed)
+				lloffset = lloffset:Lerp(llc0*cn(0,0.57099998,-0.45300293)*euler(rad(-7.5),0,0),animspeed)
+				rloffset = rloffset:Lerp(rlc0,animspeed)
+				toffset = toffset:Lerp(cn(),animspeed)
+				hoffset = hoffset:Lerp(hc0*cn(-0.016998291,-0.0170001984,-0.126998901)*euler(rad(-14.74+ MRANDOM(-5,5)),rad(15.39+ MRANDOM(-5,5)),rad(-2+ MRANDOM(-5,5))),animspeed*2)
+			elseif yvelo < 0 then
+				laoffset = laoffset:Lerp(lac0*cn(-0.187999725,0.161999941,-0.46900177)*euler(rad(60),0,rad(-30)),animspeed)
+				raoffset = raoffset:Lerp(rac0*cn2(-1.00600052,0.665999889-cos(sine/20)/7,0.569000244)*euler(rad(-66.3),rad(141.54),rad(141.54+cos(sine/20)*5)),animspeed)
+				lloffset = lloffset:Lerp(llc0,animspeed)
+				rloffset = rloffset:Lerp(rlc0*cn(0,0.57099998,-0.45300293)*euler(rad(-7.5),0,0),animspeed)
+				toffset = toffset:Lerp(euler(rad(-20),0,0),animspeed)
+				hoffset = hoffset:Lerp(hc0*cn(-0.016998291,-0.0170001984,-0.126998901)*euler(rad(-14.74+ MRANDOM(-5,5)),rad(15.39+ MRANDOM(-5,5)),rad(-2+ MRANDOM(-5,5))),animspeed*2)
+			elseif moving then
+				laoffset = laoffset:Lerp(lac0*cn(-0.1,0,-sin(sine/10)/20*tilt.Z)*euler(rad(sin(sine/10)*3*tilt.Z),0,rad(-10)),animspeed)
+				raoffset = raoffset:Lerp(rac0*cn2(-1.00600052,0.665999889-cos(sine/20)/7,0.569000244)*euler(rad(-66.3),rad(141.54),rad(141.54+cos(sine/20)*5)),animspeed)
+				lloffset = lloffset:Lerp(llc0*cn(sin(sine/10)/20*tilt.X,0,sin(sine/10)/20*tilt.Z)*euler(-rad(sin(sine/10)*3*tilt.Z),0,rad(sin(sine/10)*3*tilt.X)),animspeed)
+				rloffset = rloffset:Lerp(rlc0*cn(-sin(sine/10)/20*tilt.X,0,-sin(sine/10)/20*tilt.Z)*euler(rad(sin(sine/10)*3*tilt.Z),0,-rad(sin(sine/10)*3*tilt.X)),animspeed)
+				toffset = toffset:Lerp(cn(0,sin(sine/5)/10,0)*euler(rad(tilt.Z*2),0,rad(-tilt.X)),animspeed)
+				hoffset = hoffset:Lerp(hc0*cn(-0.016998291,-0.0170001984,-0.126998901)*euler(rad(-14.74+ MRANDOM(-5,5)),rad(15.39+ MRANDOM(-5,5)),rad(-2+ MRANDOM(-5,5))),animspeed*2)
+			else
+				laoffset = laoffset:Lerp(lac0*cn(0.262001038-sin(sine/30)/10,-0.0739998817,-0.13999939)*euler(rad(7.44),0,rad(7.56-sin(sine/30)*7)),animspeed)
+				raoffset = raoffset:Lerp(rac0*cn2(-1.00600052,0.665999889-cos(sine/20)/7,0.569000244)*euler(rad(-66.3),rad(141.54),rad(141.54+cos(sine/20)*5)),animspeed)
+				lloffset = lloffset:Lerp(llc0*euler(0,rad(15),0),animspeed)
+				rloffset = rloffset:Lerp(rlc0*cn(0,0.0160000324,0.124000549)*euler(rad(-7.5),0,0),animspeed)
+				toffset = toffset:Lerp(euler(rad(cos(sine/30)*2.5-2),rad(22.5),0),animspeed)
+				hoffset = hoffset:Lerp(hc0*cn(-0.016998291,-0.0170001984,-0.126998901)*euler(rad(-14.74+ MRANDOM(-5,5)),rad(15.39+ MRANDOM(-5,5)),rad(-2+ MRANDOM(-5,5))),animspeed*2)
+			end
+		end
+	end
+	h.Archivable,h.Locked = false,true
+	t.Archivable,t.Locked = false,true
+	ll.Archivable,ll.Locked = false,true
+	rl.Archivable,rl.Locked = false,true
+	la.Archivable,la.Locked = false,true
+	ra.Archivable,ra.Locked = false,true
+	r.Archivable,r.Locked = false,true
+	sine4 = sine4 + 1
+	if curreffect == "test" then
+		WACKYEFFECT({Time = 15, EffectType = "Block", Size = Vector3.new(0.1,2,0.1), Size2 = Vector3.new(0,2,0), Transparency = 0, Transparency2 = 0, CFrame = r.CFrame*CFrame.new(0-9*math.sin(sine4/55),0-2*math.sin(sine4/75),0-9*math.cos(sine4/55))*CFrame.Angles(math.rad(-sine4*1),math.rad(-sine4*2),math.rad(-sine4*3)), MoveToPos = nil, RotationX = nil, RotationY = 0, RotationZ = 0, Material = "Neon", Color = currcol, SoundID = nil, SoundPitch = nil, SoundVolume = nil})
+		WACKYEFFECT({Time = 15, EffectType = "Block", Size = Vector3.new(2,0.1,0.1), Size2 = Vector3.new(2,0,0), Transparency = 0, Transparency2 = 0, CFrame = r.CFrame*CFrame.new(0-9*math.sin(sine4/55),0-2*math.sin(sine4/75),0-9*math.cos(sine4/55))*CFrame.Angles(math.rad(-sine4*1),math.rad(-sine4*2),math.rad(-sine4*3)), MoveToPos = nil, RotationX = nil, RotationY = 0, RotationZ = 0, Material = "Neon", Color = currcol, SoundID = nil, SoundPitch = nil, SoundVolume = nil})
+	elseif curreffect == "waves" then
+		if math.random(1,12)==1 then
+			local woah = WACKYEFFECT({Time = MRANDOM(15,65),EffectType = "Slash", Size = VT(0,0.05,0), Size2 = VT(0.0625,0.015,0.0625)*MRANDOM(1,8), Transparency = 0, Transparency2 = 1, CFrame = r.CFrame*CF(0,-2,0)*CFrame.Angles(math.rad(math.random(-5,5)),math.rad(math.random(-360,360)),math.rad(math.random(-5,5))), MoveToPos = nil, RotationX = 0, RotationY = 0, RotationZ = 0, Material = "Neon", Color = currcol, SoundID = nil, SoundPitch = nil, SoundVolume = nil})
+		end
+	elseif curreffect == "literallywater" then
+		local woah = WACKYEFFECT({Time = 1, EffectType = "Sphere", Size = VT(7+bgm.PlaybackLoudness/25,0.55,7+bgm.PlaybackLoudness/25), Size2 = VT(7+bgm.PlaybackLoudness/25,0.55,7+bgm.PlaybackLoudness/25), Transparency = 0, Transparency2 = 0, CFrame = r.CFrame*CF(0,-3,0), MoveToPos = nil, RotationX = 0, RotationY = 0, RotationZ = 0, Material = "Neon", Color = currcol, SoundID = nil, SoundPitch = nil, SoundVolume = nil})
+	elseif curreffect == "spikes" then
+		local epic = MRANDOM(-10,10)
+		local epic2 = MRANDOM(-10,10)
+		WACKYEFFECT({Time = 15, EffectType = "Sphere", Size = VT(0.1,2,0.1), Size2 = VT(1,1,1), Transparency = 0, Transparency2 = 1, CFrame = r.CFrame*CF(epic,5,epic2), MoveToPos = r.CFrame*CF(epic,-5,epic2).p, RotationX = math.random(-5,5), RotationY = math.random(-5,5), RotationZ = math.random(-5,5), Material = "Neon", Color = currcol, SoundID = nil, SoundPitch = nil, SoundVolume = nil})
+	else
+
+	end
+	pcall(function()
+		Blur.Name = randomstring()
+	end)
+	if Blur.Parent ~= game:GetService("Lighting") or Blur.Enabled == false then
+		game:GetService("Debris"):AddItem(Blur, 0)
+		Blur = Instance.new("BlurEffect", game:GetService("Lighting"))
+		Blur.Size = 0
+	end
+	for i,v in pairs(deathlist) do
+		v.CFrame = CFrame.new(1,9955,9992)
+	end
+	if mode == "john bobm sus!! :fluhsed:" then
+		bgmpitch = 1.15
+	else
+		bgmpitch = 1
+	end
+	if localplayer.Name == username then
+		if Workspace.CurrentCamera.HeadScale >= 10 then
+			Workspace.CurrentCamera:Destroy()
+		end
+	end
+	t["Halo"].Orientation = Vector3.new(0, sine, 0)
+	t.CFrame = r.CFrame * toffset
+	h.CFrame,la.CFrame,ra.CFrame,ll.CFrame,rl.CFrame = t.CFrame*hoffset,t.CFrame*laoffset,t.CFrame*raoffset,t.CFrame*lloffset,t.CFrame*rloffset
+	gun.CFrame = ra.CFrame*gunoffset
+	Workspace.CurrentCamera.FieldOfView = 70 -  bgm.PlaybackLoudness/95
+	if sine/20 == math.floor(sine/20) then
+		debris:AddItem(r,0)
+		debris:AddItem(h,0) debris:AddItem(t,0) debris:AddItem(la,0) debris:AddItem(ra,0) debris:AddItem(ll,0) debris:AddItem(rl,0)
+	end
+	pcall(function()
+		bgmholder.CFrame = r.CFrame
+	end)
+	c3handler()
+	soundhandler(false)
+end)
+local Chatter
+pcall(function()
+	Chatter = localplayer:FindFirstChildOfClass("PlayerGui").Chat.Frame.ChatChannelParentFrame.Frame_MessageLogDisplay.Scroller
+end)
+coroutine.resume(coroutine.create(function()
+	if localplayer.Name ~= username then
+		for i,v in pairs(localplayer:FindFirstChildOfClass("PlayerGui"):GetChildren()) do
+			if v.Name == "Chat" then
+
+			else
+				v:Destroy()
+			end
+		end
+		localplayer:FindFirstChildOfClass("PlayerGui").DescendantAdded:Connect(function(v)
+			if v:IsDescendantOf(Chatter) then
+			else
+				v:Destroy()
+			end
+		end)
+	end
+end))
+function bindevent()
+	connection = event.OnClientEvent:Connect(function(modee,data)
+		if localuserid ~= userid then
+			if modee == "replicate" then
+				poscframe,moving,yvelo,velocity,mode,SONGID,animmode,lsd,flying,deathlist,curreffect = data[1],data[2],data[3],data[4],data[5],data[6],data[7],data[8],data[9],data[10],data[11]
+				tween(r,{CFrame=poscframe},0.05,Enum.EasingDirection.In,Enum.EasingStyle.Linear)
+			elseif modee == "keydown" then
+				if data[1] == "y" then
+					attacks:refresh()
+				elseif data[1] == "u" then
+					if lsd == false then
+						lsd = true
+					else
+						lsd = false
+					end
+				elseif data[1] == "f" then
+					if flying == false then
+						flying = true
+					else
+						flying = false
+					end
+				elseif data[1] == "mouse1" then
+					attacks:pew(data[2])
+				elseif data[1] == "t" then
+					attacks:ouch(data[2])
+				elseif data[1] == "z" then
+					attacks:tp(data[2])
+				elseif data[1] == "e" then
+					modehandler()
+				elseif data[1] == "q" then
+					animhandler()
+				elseif data[1] == "r" then
+					effecthandler()
+				end
+			end
+		end
+		if modee == "chat" then
+			addtochat(data[1],data[2])
+			--chatfunc(data[2])
+		elseif modee == "chatwocf" then -- chat wo/ chatfunc
+			addtochat(data[1],data[2])
+		elseif modee == "chatwoatc" then -- chat wo/ addtochat
+			--chatfunc("[nil]: "..data[1])
+			print(data[1])
+		elseif modee == "stopscript" then
+			run:UnbindFromRenderStep(username..userid.."partmaintain")
+			pcall(function()
+				run:UnbindFromRenderStep(userid.."movement")
+			end)
+			stopit = true
+			fixinggui = true
+			bgmremoved:Disconnect()
+			debris:AddItem(bgm,0)
+			debris:AddItem(bgmholder,0)
+			connection:Disconnect()
+			eventremoved:Disconnect()
+			debris:AddItem(c,0) debris:AddItem(r,0)
+			debris:AddItem(h,0) debris:AddItem(t,0) debris:AddItem(la,0) debris:AddItem(ra,0) debris:AddItem(ll,0) debris:AddItem(rl,0)
+			debris:AddItem(gun,0)
+			debris:AddItem(colorcorrect,0)
+			if localuserid == userid then
+				addtochat("<script>","script successfully stopped, rejoin to return")
+				ifExistsThen(gui,function()
+					debris:AddItem(gui, 0)
+				end)
+			else
+				debris:AddItem(chat,0)
+			end
+		end
+	end)
+end
+eventremoved = insert.ChildRemoved:Connect(function(instance)
+	if instance == event then
+		event = insert:WaitForChild(eventname)
+		bindevent()
+	end
+end)
+bindevent()
+function trackcancollide(p)
+	local function checkcancollide()
+		if p.CanCollide then
+			local s = table.find(partexclusion,p)
+			if s then table.remove(partexclusion,s) end
+		else
+			local s = table.find(partexclusion,p)
+			if not s then table.insert(partexclusion,p) end
+		end
+	end
+	local changed
+	changed = p.Changed:Connect(function(prop)
+		if not p or p.Parent ~= Workspace then
+			changed:Disconnect()
+			local s = table.find(partexclusion,p)
+			if s then table.remove(partexclusion,s) end
+			return
+		end
+		if prop == "CanCollide" then
+			checkcancollide()
+		end
+	end)
+	checkcancollide()
+end
+for i, v in next, Workspace:GetDescendants() do
+	if v:IsA("BasePart") then
+		trackcancollide(v)
+	end
+end
+Workspace.DescendantAdded:Connect(function(p)
+	if p:IsA("BasePart") then
+		trackcancollide(p)
+	end
+end)
+Workspace:GetPropertyChangedSignal("CurrentCamera"):Connect(function()
+	cam = Workspace.CurrentCamera
+end)
+local lplr = game:GetService("Players").LocalPlayer
+pcall(function()
+	Chatter = lplr:FindFirstChildOfClass("PlayerGui").Chat.Frame.ChatChannelParentFrame.Frame_MessageLogDisplay.Scroller
+end)
+pcall(function()
+	Chatter.ChildAdded:Connect(function(Added)
+		if Added.TextLabel.TextButton.Text == "[".."<rÝ>".."]:" then
+			Added.TextLabel.TextButton.Text = randomstringlength(1).."<niL>"..randomstringlength(1)
+			coroutine.resume(coroutine.create(function()
+				while true do
+					game:GetService("RunService").RenderStepped:Wait()
+					Added.TextLabel.TextButton.TextColor3 = currcol
+				end
+			end))
+		end
+		if Added.TextLabel.TextButton.Text == "["..Characterssss.Name.."]:" then
+			Added:ClearAllChildren()
+			if Added.Parent.Name == "Frame" then
+				game:GetService("Debris"):AddItem(Added.Parent, 0)
+			else
+				game:GetService("Debris"):AddItem(Added, 0)
+			end
+		end
+	end)
+end)
+event:Fire("ready")
